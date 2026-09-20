@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#000000"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="Gucciman"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<title>Gucciman</title>
+<link rel="icon" href="data:image/png;base64,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"/>
+<link rel="apple-touch-icon" href="data:image/png;base64,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"/>
+<style>
+:root {
+  --bg: #050505;
+  --bg2: #0c0c0c;
+  --card: #111111;
+  --card2: #161616;
+  --line: #222;
+  --text: #f4f4f4;
+  --muted: #8a8a8a;
+  --dim: #5c5c5c;
+  --live: #e11d2e;
+  --ok: #2fbf71;
+  --warn: #c9a227;
+  --bad: #d14b4b;
+  --safe: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: #000; color: var(--text); }
+body {
+  font-family: "Inter", "SF Pro Text", system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+#app {
+  max-width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+}
+header.appbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--line);
+  background: #000;
+  flex-shrink: 0;
+}
+.splash {
+  position: absolute; inset: 0;
+  background: #000;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+}
+.splash.through {
+  background: transparent;
+  pointer-events: none;
+}
+.splash img {
+  width: 96px; height: 96px;
+  border-radius: 20px;
+  background: #000;
+  border: 1px solid #222;
+  animation: splashPulse 2.5s ease-in-out both;
+  transform-origin: center center;
+}
+.splash.through img {
+  animation: splashThrough 0.3s cubic-bezier(.2,.7,.2,1) forwards;
+  border-color: transparent;
+}
+.splash strong {
+  letter-spacing: 0.28em;
+  font-size: 14px;
+  color: #f4f4f4;
+  animation: splashIn 0.5s ease both;
+}
+.splash.through strong { opacity: 0; transition: opacity .12s linear; }
+@keyframes splashIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes splashPulse {
+  0% { transform: scale(.82); opacity: 0; }
+  18% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+@keyframes splashThrough {
+  0% { transform: scale(1); opacity: 1; filter: blur(0); }
+  100% { transform: scale(18); opacity: 0; filter: blur(2px); }
+}
+.logo {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: #000;
+  border: 1px solid #2a2a2a;
+  object-fit: cover;
+}
+.brand { display: flex; flex-direction: column; }
+.brand strong { font-size: 16px; letter-spacing: 0.18em; font-weight: 700; }
+.brand span { font-size: 10px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; }
+.header-meta { margin-left: auto; font-size: 11px; color: var(--muted); text-align: right; }
+
+main {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 14px 18px;
+  padding-bottom: calc(86px + var(--safe));
+}
+.tab { display: none; }
+.tab.active { display: block; }
+
+.row { display: flex; align-items: center; gap: 8px; }
+.space { justify-content: space-between; }
+
+h2.sec {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 16px 2px 8px;
+}
+h2.sec:first-child { margin-top: 4px; }
+
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: 0 0 auto;
+  border: 1px solid #2a2a2a;
+  background: #0e0e0e;
+  color: #cfcfcf;
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.chip.on { background: #fff; color: #000; border-color: #fff; font-weight: 600; }
+
+.match {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+.match.live {
+  padding: 16px 14px;
+  background: linear-gradient(180deg, #141414 0%, #0d0d0d 100%);
+  border-color: #2a1518;
+  box-shadow: inset 0 0 0 1px rgba(225,29,46,0.18);
+}
+.match.finished { opacity: 0.92; }
+.league-tag { font-size: 10px; color: var(--dim); letter-spacing: 0.1em; text-transform: uppercase; }
+.live-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--live); font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--live);
+  box-shadow: 0 0 0 0 rgba(225,29,46,.7);
+  animation: pulse 1.4s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(225,29,46,.55); }
+  70% { box-shadow: 0 0 0 8px rgba(225,29,46,0); }
+  100% { box-shadow: 0 0 0 0 rgba(225,29,46,0); }
+}
+.scoreboard { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; margin-top: 8px; }
+.team { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.team.away { justify-content: flex-end; text-align: right; }
+.crest { width: 26px; height: 26px; object-fit: contain; }
+.match.live .crest { width: 34px; height: 34px; }
+.tname { font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.match.live .tname { font-size: 15px; }
+.score {
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  min-width: 64px;
+  text-align: center;
+}
+.match.live .score { font-size: 32px; min-width: 84px; }
+.clock { text-align: center; font-size: 11px; color: var(--muted); margin-top: 2px; }
+.match.live .clock { color: var(--live); font-weight: 700; font-size: 12px; }
+.events { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.ev {
+  font-size: 12px; color: #c8c8c8;
+  display: flex; gap: 8px; align-items: baseline;
+}
+.ev b { color: #fff; font-weight: 600; }
+.ev .min { color: var(--dim); width: 34px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); font-size: 13px; padding: 28px 8px; text-align: center; }
+
+.search {
+  width: 100%;
+  background: #0e0e0e;
+  border: 1px solid #262626;
+  color: #fff;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 14px;
+  outline: none;
+}
+.search:focus { border-color: #444; }
+.player {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 4px; border-bottom: 1px solid #161616;
+}
+.ava {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #1a1a1a; object-fit: cover; border: 1px solid #2a2a2a;
+}
+.pname { font-size: 14px; font-weight: 600; }
+.pmeta { font-size: 11px; color: var(--muted); }
+.icon-btn, .btn {
+  border: 0; cursor: pointer; font-family: inherit;
+}
+.btn {
+  background: #fff; color: #000; border-radius: 10px;
+  padding: 10px 14px; font-weight: 650; font-size: 13px;
+}
+.btn.ghost { background: transparent; color: #ddd; border: 1px solid #2a2a2a; }
+.btn.red { background: #1a0d0f; color: #f0c9cd; border: 1px solid #3a1c20; }
+.btn.ok { background: #0f1a14; color: #b7ebc9; border: 1px solid #1d3a28; }
+.btn.warn { background: #1a170c; color: #ead9a0; border: 1px solid #3a3418; }
+.btn.full { width: 100%; }
+.btn.sm { padding: 6px 10px; font-size: 12px; border-radius: 8px; }
+.add {
+  margin-left: auto;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #fff; color: #000; border: 0; font-size: 20px; line-height: 1; cursor: pointer;
+}
+.add.on { background: #1a1a1a; color: #fff; border: 1px solid #333; }
+.trash {
+  margin-left: auto;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: transparent; color: #c8c8c8;
+  border: 1px solid #2a2a2a; font-size: 15px; line-height: 1;
+  cursor: pointer; padding: 0;
+}
+.trash:active { color: #fff; border-color: #555; }
+.rank {
+  display: grid; grid-template-columns: 28px minmax(0, 1fr) auto;
+  gap: 10px; align-items: center;
+  padding: 10px 2px; border-bottom: 1px solid #161616;
+}
+.rank .pname, .rank .pmeta {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pos { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.ga { text-align: right; }
+.ga b { font-size: 16px; }
+.ga span { display: block; font-size: 10px; color: var(--muted); }
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px;
+}
+.stat {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 10px;
+}
+.stat .n { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat .l { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+.stat.pos .n { color: var(--ok); }
+.stat.neg .n { color: var(--bad); }
+
+.form { display: flex; flex-direction: column; gap: 8px; margin: 8px 0 14px; }
+label.field { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+select, input[type="number"], input[type="text"] {
+  width: 100%; background: #0e0e0e; border: 1px solid #262626; color: #fff;
+  border-radius: 12px; padding: 11px 12px; font-size: 14px; outline: none;
+}
+.seg { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.seg button {
+  background: #0e0e0e; color: #bbb; border: 1px solid #262626;
+  border-radius: 10px; padding: 10px 6px; font-size: 12px; cursor: pointer;
+}
+.seg button.on { background: #fff; color: #000; border-color: #fff; font-weight: 650; }
+
+.bet {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 12px; margin-bottom: 8px;
+}
+.bet-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.status {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 999px; border: 1px solid #333; color: var(--muted);
+}
+.status.open { color: #ddd; }
+.status.won { color: var(--ok); border-color: #1d3a28; }
+.status.lost { color: var(--bad); border-color: #3a1c20; }
+.status.cancelled, .status.refunded { color: var(--warn); border-color: #3a3418; }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.decisif { margin-top: 6px; font-size: 12px; color: #cfcfcf; }
+.decisif li { margin: 4px 0; }
+
+nav.tabs {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: #000;
+  border-top: 1px solid #1c1c1c;
+  padding: 8px 6px calc(10px + var(--safe));
+}
+nav.tabs button {
+  background: none; border: 0; color: #666; font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  cursor: pointer; font-weight: 600;
+}
+nav.tabs button svg { width: 20px; height: 20px; }
+nav.tabs button.on { color: #fff; }
+
+.date-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.date-nav button {
+  width: 32px; height: 32px; border-radius: 50%; border: 1px solid #2a2a2a;
+  background: #0e0e0e; color: #fff; cursor: pointer;
+}
+.date-label { font-size: 13px; font-weight: 600; }
+
+.toast {
+  position: absolute; left: 16px; right: 16px; bottom: calc(78px + var(--safe));
+  background: #fff; color: #000; border-radius: 10px; padding: 10px 12px;
+  font-size: 13px; font-weight: 600; display: none; text-align: center;
+}
+.modal-bg {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.72);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 40; padding: 20px;
+}
+.modal-bg[hidden] { display: none; }
+.modal {
+  width: 100%; max-width: 320px;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 18px 16px 14px;
+}
+.modal-txt {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  color: #f4f4f4;
+}
+.modal-actions { display: flex; gap: 8px; }
+.modal-actions .btn { flex: 1; }
+.btn {
+  border: 0; border-radius: 10px; padding: 10px 12px;
+  font-size: 14px; font-weight: 650; cursor: pointer;
+  background: #fff; color: #000;
+}
+.btn.ghost {
+  background: #1a1a1a; color: #eee; border: 1px solid #2a2a2a;
+}
+.loading { color: var(--muted); font-size: 12px; text-align: center; padding: 16px; }
+
+.fav-hit {
+  color: #ffb020;
+  font-weight: 700;
+}
+.ev .assist { color: #c8c8c8; font-weight: 500; }
+.ev .assist .fav-hit { color: #ffb020; }
+
+.match { position: relative; overflow: hidden; }
+.star {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.85;
+  z-index: 3;
+  padding: 0;
+  -webkit-text-stroke: 0;
+}
+.star.on { color: #ffd000; opacity: 1; text-shadow: 0 0 8px rgba(255,208,0,.45); }
+.st-ht, .st-fin {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+.st-ht { color: #ffb020; }
+.st-fin { color: #9a9a9a; }
+.match.ht .clock { color: #ffb020; font-weight: 700; }
+.match.finished .clock { color: #9a9a9a; font-weight: 700; }
+.match.goal-flash > *:not(.buuut) { opacity: 0.1; }
+.match.goal-flash .buuut { opacity: 1; }
+.buuut {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #fff;
+  z-index: 4;
+  pointer-events: none;
+  animation: buuutBlink 0.35s step-end infinite;
+}
+@keyframes buuutBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.chips.wrap { flex-wrap: wrap; }
+
+.toggle {
+  flex-shrink: 0;
+  min-width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #888;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.toggle.on {
+  background: #ffd000;
+  border-color: #ffd000;
+  color: #111;
+}
+nav.tabs button { flex: 1; min-width: 0; }
+
+.events.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin-top: 10px;
+}
+.evcol { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.evcol.away { align-items: flex-end; text-align: right; }
+.ev.home, .ev.away { width: 100%; }
+.ev.away { justify-content: flex-end; }
+.ev .evname { min-width: 0; }
+.ev.away .min { width: 34px; text-align: right; }
+
+.bet-leg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #c8c8c8;
+}
+.bet-leg span { min-width: 0; }
+
+.analyse-card { margin-bottom: 10px; }
+.an-bars { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+.an-row { display: grid; grid-template-columns: 16px 1fr 44px; gap: 8px; align-items: center; font-size: 11px; color: var(--muted); }
+.an-row b { text-align: right; color: #fff; font-size: 12px; }
+.bar { height: 7px; background: #1b1b1b; border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: #ffd000; border-radius: 99px; }
+.watch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.watch-p { background: #161616; border: 1px solid #222; border-radius: 10px; padding: 8px; }
+.watch-p b { display: block; font-size: 13px; }
+.watch-p span { font-size: 11px; color: var(--muted); }
+
+.xi {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ffd000;
+  font-weight: 600;
+}
+
+.analyse-card .scoreboard { align-items: start; }
+.analyse-card .team {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.analyse-card .team.away { align-items: flex-end; }
+.form-boxes { display: flex; gap: 3px; margin-top: 2px; justify-content: flex-start; }
+.team.away .form-boxes { justify-content: flex-end; }
+.fb {
+  width: 16px; height: 16px; border-radius: 3px;
+  font-size: 9px; font-weight: 800; font-style: normal;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff;
+}
+.fb.w { background: #1f8a3b; }
+.fb.n { background: #6b6b6b; }
+.fb.l { background: #c43c3c; }
+
+.badge-play {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #ffd000;
+  color: #111;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+
+.logo { background:#000; border-color:#111; }
+.match-head { padding-right: 30px; }
+nav.tabs button { font-size: 9px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="splash" class="splash">
+    <img src="data:image/png;base64,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" alt="Gucciman"/>
+    <strong>GUCCIMAN</strong>
+  </div>
+  <header class="appbar">
+    <img class="logo" src="data:image/png;base64,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" alt="G"/>
+    <div class="brand">
+      <strong>GUCCIMAN</strong>
+      <span>Live · Favoris · Paris</span>
+    </div>
+    <div class="header-meta">Saison 2026-27</div>
+  </header>
+  <main id="main"></main>
+<nav class="tabs">
+    <button data-tab="matches" class="on">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+      Matchs
+    </button>
+    <button data-tab="favs">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3.5l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.2 7.2 18.4l.9-5.4L4.2 9.2l5.4-.8z"/></svg>
+      Favoris
+    </button>
+    <button data-tab="analyse">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-7"/></svg>
+      Analyse
+    </button>
+    <button data-tab="bets">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+      Paris
+    </button>
+    <button data-tab="rank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 19V9h3v10M14 19V5h3v14"/></svg>
+      Classement
+    </button>
+    <button data-tab="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      Réglages
+    </button>
+  </nav>
+  <div class="toast" id="toast"></div>
+  <div class="modal-bg" id="confirmBg" hidden>
+    <div class="modal">
+      <p class="modal-txt" id="confirmTxt"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="confirmNo">Non</button>
+        <button type="button" class="btn" id="confirmYes">Oui</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+window.GUCCI = {
+  leagues: [
+    { id: "eng.1", name: "Premier League", short: "PL", country: "ENG" },
+    { id: "esp.1", name: "La Liga", short: "LL", country: "ESP" },
+    { id: "ita.1", name: "Serie A", short: "SA", country: "ITA" },
+    { id: "ger.1", name: "Bundesliga", short: "BL", country: "GER" },
+    { id: "fra.1", name: "Ligue 1", short: "L1", country: "FRA" },
+    { id: "ksa.1", name: "Saudi Pro League", short: "SPL", country: "KSA" },
+    { id: "ned.1", name: "Eredivisie", short: "ERE", country: "NED" },
+    { id: "por.1", name: "Liga Portugal", short: "LP", country: "POR" },
+    { id: "chn.1", name: "Super League CN", short: "CSL", country: "CHN" },
+    { id: "usa.1", name: "MLS", short: "MLS", country: "USA" },
+    { id: "tur.1", name: "Süper Lig", short: "TSL", country: "TUR" },
+    { id: "bra.1", name: "Brasileirão", short: "BRA", country: "BRA" },
+  ],
+  players: [
+    { id: "253989", name: "Erling Haaland", team: "Manchester City", league: "Premier League", pos: "BU" },
+    { id: "231388", name: "Kylian Mbappé", team: "Real Madrid", league: "La Liga", pos: "BU" },
+    { id: "252107", name: "Vinícius Júnior", team: "Real Madrid", league: "La Liga", pos: "AG" },
+    { id: "291281", name: "Jude Bellingham", team: "Real Madrid", league: "La Liga", pos: "MC" },
+    { id: "267804", name: "Rodrygo", team: "Real Madrid", league: "La Liga", pos: "AD" },
+    { id: "235818", name: "Federico Valverde", team: "Real Madrid", league: "La Liga", pos: "MC" },
+    { id: "346612", name: "Endrick", team: "Real Madrid", league: "La Liga", pos: "BU" },
+    { id: "310452", name: "Arda Güler", team: "Real Madrid", league: "La Liga", pos: "MO" },
+    { id: "246532", name: "Brahim Díaz", team: "Real Madrid", league: "La Liga", pos: "MO" },
+    { id: "285150", name: "Eduardo Camavinga", team: "Real Madrid", league: "La Liga", pos: "MC" },
+    { id: "265919", name: "Aurélien Tchouaméni", team: "Real Madrid", league: "La Liga", pos: "MDC" },
+    { id: "362150", name: "Lamine Yamal", team: "Barcelona", league: "La Liga", pos: "AD" },
+    { id: "250465", name: "Pedri", team: "Barcelona", league: "La Liga", pos: "MC" },
+    { id: "231050", name: "Raphinha", team: "Barcelona", league: "La Liga", pos: "AG" },
+    { id: "354334", name: "Fermín López", team: "Barcelona", league: "La Liga", pos: "MC" },
+    { id: "231828", name: "Rodri", team: "Barcelona", league: "La Liga", pos: "MDC" },
+    { id: "277206", name: "Julián Álvarez", team: "Atlético Madrid", league: "La Liga", pos: "BU" },
+    { id: "229645", name: "Ademola Lookman", team: "Atlético Madrid", league: "La Liga", pos: "ATT" },
+    { id: "312146", name: "Nico Williams", team: "Athletic Club", league: "La Liga", pos: "AG" },
+    { id: "159317", name: "Aymeric Laporte", team: "Athletic Club", league: "La Liga", pos: "DC" },
+    { id: "336809", name: "Cucho Hernández", team: "Real Betis", league: "La Liga", pos: "BU" },
+    { id: "280555", name: "Bukayo Saka", team: "Arsenal", league: "Premier League", pos: "AD" },
+    { id: "258906", name: "Viktor Gyökeres", team: "Arsenal", league: "Premier League", pos: "BU" },
+    { id: "251400", name: "Eberechi Eze", team: "Arsenal", league: "Premier League", pos: "MO" },
+    { id: "250787", name: "Phil Foden", team: "Manchester City", league: "Premier League", pos: "MO" },
+    { id: "283672", name: "Jérémy Doku", team: "Manchester City", league: "Premier League", pos: "AG" },
+    { id: "273292", name: "Antoine Semenyo", team: "Manchester City", league: "Premier League", pos: "ATT" },
+    { id: "296395", name: "Cole Palmer", team: "Chelsea", league: "Premier League", pos: "MO" },
+    { id: "276350", name: "João Félix", team: "Chelsea", league: "Premier League", pos: "ATT" },
+    { id: "235662", name: "Alexander Isak", team: "Liverpool", league: "Premier League", pos: "BU" },
+    { id: "303748", name: "Florian Wirtz", team: "Liverpool", league: "Premier League", pos: "MO" },
+    { id: "249524", name: "Cody Gakpo", team: "Liverpool", league: "Premier League", pos: "AG" },
+    { id: "304901", name: "Hugo Ekitike", team: "Liverpool", league: "Premier League", pos: "BU" },
+    { id: "328238", name: "Bradley Barcola", team: "Liverpool", league: "Premier League", pos: "AG" },
+    { id: "124091", name: "Bruno Fernandes", team: "Manchester United", league: "Premier League", pos: "MO" },
+    { id: "271170", name: "Bryan Mbeumo", team: "Manchester United", league: "Premier League", pos: "AD" },
+    { id: "259902", name: "Matheus Cunha", team: "Manchester United", league: "Premier League", pos: "ATT" },
+    { id: "230945", name: "Marcus Rashford", team: "Manchester United", league: "Premier League", pos: "AG" },
+    { id: "303745", name: "Omar Marmoush", team: "Tottenham", league: "Premier League", pos: "ATT" },
+    { id: "201089", name: "Jarrod Bowen", team: "West Ham", league: "Premier League", pos: "AD" },
+    { id: "241187", name: "Jean-Philippe Mateta", team: "Crystal Palace", league: "Premier League", pos: "BU" },
+    { id: "282229", name: "Brian Brobbey", team: "Sunderland", league: "Premier League", pos: "BU" },
+    { id: "310958", name: "Kevin Schade", team: "Brentford", league: "Premier League", pos: "ATT" },
+    { id: "142200", name: "Harry Kane", team: "Bayern Munich", league: "Bundesliga", pos: "BU" },
+    { id: "303821", name: "Jamal Musiala", team: "Bayern Munich", league: "Bundesliga", pos: "MO" },
+    { id: "202641", name: "Leroy Sané", team: "Bayern Munich", league: "Bundesliga", pos: "AD" },
+    { id: "184012", name: "Kingsley Coman", team: "Bayern Munich", league: "Bundesliga", pos: "AG" },
+    { id: "186381", name: "Serhou Guirassy", team: "Borussia Dortmund", league: "Bundesliga", pos: "BU" },
+    { id: "222176", name: "Christopher Nkunku", team: "RB Leipzig", league: "Bundesliga", pos: "ATT" },
+    { id: "102337", name: "Edin Džeko", team: "Schalke 04", league: "Bundesliga", pos: "BU" },
+    { id: "229744", name: "Ousmane Dembélé", team: "Paris Saint-Germain", league: "Ligue 1", pos: "ATT" },
+    { id: "274745", name: "Khvicha Kvaratskhelia", team: "Paris Saint-Germain", league: "Ligue 1", pos: "AG" },
+    { id: "336388", name: "Désiré Doué", team: "Paris Saint-Germain", league: "Ligue 1", pos: "AD" },
+    { id: "240233", name: "Achraf Hakimi", team: "Paris Saint-Germain", league: "Ligue 1", pos: "DD" },
+    { id: "345581", name: "Warren Zaïre-Emery", team: "Paris Saint-Germain", league: "Ligue 1", pos: "MC" },
+    { id: "288897", name: "Vitinha", team: "Paris Saint-Germain", league: "Ligue 1", pos: "MC" },
+    { id: "265869", name: "Ferran Torres", team: "Paris Saint-Germain", league: "Ligue 1", pos: "ATT" },
+    { id: "219713", name: "Lautaro Martínez", team: "Inter", league: "Serie A", pos: "BU" },
+    { id: "204441", name: "Nicolò Barella", team: "Inter", league: "Serie A", pos: "MC" },
+    { id: "134947", name: "Kevin De Bruyne", team: "Napoli", league: "Serie A", pos: "MO" },
+    { id: "366509", name: "Kenan Yıldız", team: "Juventus", league: "Serie A", pos: "ATT" },
+    { id: "312659", name: "Francisco Conceição", team: "Juventus", league: "Serie A", pos: "AD" },
+    { id: "258917", name: "Rafael Leão", team: "Milan", league: "Serie A", pos: "AG" },
+    { id: "22774", name: "Cristiano Ronaldo", team: "Al Nassr", league: "Saudi Pro League", pos: "BU" },
+    { id: "46858", name: "Karim Benzema", team: "Al Ittihad", league: "Saudi Pro League", pos: "BU" },
+    { id: "169797", name: "Sadio Mané", team: "Al Nassr", league: "Saudi Pro League", pos: "AG" },
+    { id: "163940", name: "Riyad Mahrez", team: "Al Ahli", league: "Saudi Pro League", pos: "AD" },
+    { id: "180639", name: "Ivan Toney", team: "Al Ahli", league: "Saudi Pro League", pos: "BU" },
+    { id: "271788", name: "Darwin Núñez", team: "Al Diriyah", league: "Saudi Pro League", pos: "BU" },
+    { id: "189025", name: "Nabil Fekir", team: "Abha", league: "Saudi Pro League", pos: "MO" },
+    { id: "207542", name: "Steven Bergwijn", team: "Al Ittihad", league: "Saudi Pro League", pos: "AG" },
+    { id: "45843", name: "Lionel Messi", team: "Inter Miami", league: "MLS", pos: "MO" },
+    { id: "125088", name: "Luis Suárez", team: "Inter Miami", league: "MLS", pos: "BU" },
+    { id: "149945", name: "Son Heung-Min", team: "LAFC", league: "MLS", pos: "AG" },
+    { id: "140416", name: "Antoine Griezmann", team: "Orlando City", league: "MLS", pos: "ATT" },
+    { id: "200161", name: "Hirving Lozano", team: "LA Galaxy", league: "MLS", pos: "AD" },
+    { id: "125824", name: "Robert Lewandowski", team: "Chicago Fire", league: "MLS", pos: "BU" },
+    { id: "173896", name: "Mohamed Salah", team: "Trabzonspor", league: "Süper Lig", pos: "AD" },
+    { id: "139437", name: "Romelu Lukaku", team: "Fenerbahçe", league: "Süper Lig", pos: "BU" },
+    { id: "167411", name: "Mauro Icardi", team: "Galatasaray", league: "Süper Lig", pos: "BU" },
+    { id: "228296", name: "Victor Osimhen", team: "Galatasaray", league: "Süper Lig", pos: "BU" },
+    { id: "235677", name: "Dušan Vlahović", team: "Beşiktaş", league: "Süper Lig", pos: "BU" },
+    { id: "242736", name: "Youssef En-Nesyri", team: "Fenerbahçe", league: "Süper Lig", pos: "BU" },
+    { id: "322538", name: "Barış Alper Yılmaz", team: "Galatasaray", league: "Süper Lig", pos: "AD" },
+    { id: "89687", name: "Dries Mertens", team: "Galatasaray", league: "Süper Lig", pos: "MO" },
+    { id: "168993", name: "Davy Klaassen", team: "Ajax", league: "Eredivisie", pos: "MC" },
+    { id: "122575", name: "Dušan Tadić", team: "NEC", league: "Eredivisie", pos: "MO" },
+    { id: "127420", name: "Luuk de Jong", team: "PSV", league: "Eredivisie", pos: "BU" },
+    { id: "260775", name: "Santiago Giménez", team: "FC Porto", league: "Liga Portugal", pos: "BU" },
+    { id: "274159", name: "Francisco Trincão", team: "Sporting CP", league: "Liga Portugal", pos: "AD" },
+    { id: "171598", name: "Wu Lei", team: "Shanghai Port", league: "Super League CN", pos: "BU" },
+    { id: "132948", name: "Neymar", team: "Santos", league: "Brésil", pos: "AG" },
+    { id: "239706", name: "Cengiz Ünder", team: "Çorum FK", league: "Süper Lig", pos: "AD" },
+    { id: "202305", name: "Gustavo", team: "Henan", league: "Super League CN", pos: "BU" }
+  ],
+};
+
+(() => {
+  const LS_FAV = "gucci_favs";
+  const LS_BETS = "gucci_bets";
+  const LS_STATS = "gucci_stats";
+  const LS_ASSIST = "gucci_assists";
+  const LS_MATCH_FAV = "gucci_match_favs";
+  const LS_SETTINGS = "gucci_settings";
+  const LEAGUES = window.GUCCI.leagues;
+  const CATALOG = window.GUCCI.players;
+
+  const state = {
+    tab: "matches",
+    date: new Date(),
+    league: "all",
+    matches: [],
+    loading: false,
+    q: "",
+    searchRemote: [],
+    betType: "buteur",
+    betPlayer: "",
+    betStake: "",
+    betOdds: "",
+    betMarket: "1n2",
+    betMatch: "",
+    betPick: "1",
+    betLine: "2.5",
+    betBtts: "oui",
+    slip: [],
+    lineups: {},
+    scoreSnap: {},
+    goalUntil: {},
+    rankSort: "ga",
+  };
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const main = $("#main");
+
+  function loadJson(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(key)) || fallback; }
+    catch { return fallback; }
+  }
+  function saveJson(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
+  function favs() { return loadJson(LS_FAV, []); }
+  function bets() { return loadJson(LS_BETS, []); }
+  function cachedStats() {
+    const raw = loadJson(LS_STATS, {});
+    if (raw && raw._v === 5) return raw;
+    saveJson(LS_STATS, { _v: 5 });
+    return { _v: 5 };
+  }
+  function getSettings() {
+    const s = loadJson(LS_SETTINGS, {});
+    return { vibrateGoals: s.vibrateGoals !== false };
+  }
+  function setSetting(key, val) {
+    const s = getSettings();
+    s[key] = val;
+    saveJson(LS_SETTINGS, s);
+  }
+
+  function toast(msg) {
+    const el = $("#toast");
+    el.textContent = msg;
+    el.style.display = "block";
+    setTimeout(() => { el.style.display = "none"; }, 1800);
+  }
+
+  function ymd(d) {
+    const x = new Date(d);
+    const m = String(x.getMonth() + 1).padStart(2, "0");
+    const day = String(x.getDate()).padStart(2, "0");
+    return `${x.getFullYear()}${m}${day}`;
+  }
+  function prettyDate(d) {
+    return new Intl.DateTimeFormat("fr-FR", { weekday: "short", day: "numeric", month: "short" }).format(d);
+  }
+  function kickoff(iso) {
+    return new Intl.DateTimeFormat("fr-FR", { hour: "2-digit", minute: "2-digit" }).format(new Date(iso));
+  }
+  function euro(n) {
+    const v = Number(n) || 0;
+    return v.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  }
+  function uid() { return Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4); }
+
+  function headshot(id) {
+    return `https://a.espncdn.com/i/headshots/soccer/players/full/${id}.png`;
+  }
+
+  async function fetchJSON(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("http " + res.status);
+    return res.json();
+  }
+
+  function parseMatch(event, league) {
+    const comp = (event.competitions || [])[0] || {};
+    const status = (comp.status || event.status || {}).type || {};
+    const clock = (comp.status || event.status || {}).displayClock || "";
+    const competitors = comp.competitors || [];
+    const home = competitors.find((c) => c.homeAway === "home") || competitors[1] || {};
+    const away = competitors.find((c) => c.homeAway === "away") || competitors[0] || {};
+    const stateName = status.state || "";
+    const statusBlob = [status.name, status.description, status.detail, status.shortDetail].filter(Boolean).join(" ");
+    const isDone = !!(status.completed || stateName === "post" || /STATUS_FULL_TIME|FULL[ _-]?TIME|\bFT\b/i.test(statusBlob));
+    const isHT = !isDone && /STATUS_HALFTIME|\bHALFTIME\b|\bHALF[ -]?TIME\b|\bMI[- ]TEMPS\b|\bPAUSE\b/.test(statusBlob)
+      && !/\b(1st|2nd|FIRST|SECOND)\s+HALF\b/i.test(statusBlob);
+    const isLive = !isDone && (isHT || stateName === "in" || /LIVE|IN_PLAY/i.test(status.name || ""));
+    const details = comp.details || [];
+    const scorers = [];
+    details.forEach((d) => {
+      const text = (d.type && d.type.text) || "";
+      const athletes = d.athletesInvolved || [];
+      if (d.scoringPlay || /goal/i.test(text)) {
+        const scorer = athletes[0];
+        const assist = athletes[1];
+        scorers.push({
+          minute: (d.clock && d.clock.displayValue) || "",
+          kind: d.ownGoal ? "csc" : d.penaltyKick ? "pen" : "but",
+          scorer: scorer ? scorer.displayName : "?",
+          scorerId: scorer ? String(scorer.id) : "",
+          assist: assist ? assist.displayName : "",
+          assistId: assist ? String(assist.id) : "",
+          teamId: (d.team && d.team.id) || "",
+        });
+      } else if (/assist/i.test(text) && athletes[0]) {
+        const last = scorers[scorers.length - 1];
+        if (last && !last.assist) {
+          last.assist = athletes[0].displayName;
+          last.assistId = String(athletes[0].id);
+        }
+      }
+    });
+    return {
+      id: event.id,
+      leagueId: league.id,
+      league: league.name,
+      date: event.date,
+      isLive,
+      isHT,
+      isDone,
+      clock: isDone ? "FIN" : isHT ? "MT" : (isLive ? clock : kickoff(event.date)),
+      home: {
+        id: String((home.team || {}).id || ""),
+        name: (home.team || {}).shortDisplayName || (home.team || {}).displayName || "?",
+        full: (home.team || {}).displayName || (home.team || {}).shortDisplayName || "",
+        logo: (home.team || {}).logo,
+        score: home.score || "0",
+        form: home.form || "",
+        record: ((home.records || [])[0] || {}).summary || "",
+      },
+      away: {
+        id: String((away.team || {}).id || ""),
+        name: (away.team || {}).shortDisplayName || (away.team || {}).displayName || "?",
+        full: (away.team || {}).displayName || (away.team || {}).shortDisplayName || "",
+        logo: (away.team || {}).logo,
+        score: away.score || "0",
+        form: away.form || "",
+        record: ((away.records || [])[0] || {}).summary || "",
+      },
+      scorers,
+    };
+  }
+
+  function assistKey(m, s) {
+    return `${m.id}|${s.minute}|${s.scorer}`;
+  }
+  function assistStore() { return loadJson(LS_ASSIST, {}); }
+  function applyAssistCache(matches) {
+    const cache = assistStore();
+    matches.forEach((m) => {
+      (m.scorers || []).forEach((s) => {
+        if (s.assist) {
+          cache[assistKey(m, s)] = { assist: s.assist, assistId: s.assistId || "" };
+          return;
+        }
+        const hit = cache[assistKey(m, s)];
+        if (hit && hit.assist) {
+          s.assist = hit.assist;
+          s.assistId = hit.assistId || "";
+        }
+      });
+    });
+    saveJson(LS_ASSIST, cache);
+  }
+  function saveAssists(matches) {
+    const cache = assistStore();
+    matches.forEach((m) => {
+      (m.scorers || []).forEach((s) => {
+        if (s.assist) cache[assistKey(m, s)] = { assist: s.assist, assistId: s.assistId || "" };
+      });
+    });
+    saveJson(LS_ASSIST, cache);
+  }
+  function keepScroll(fn) {
+    const y = main.scrollTop;
+    fn();
+    main.scrollTop = y;
+  }
+
+  async function loadMatches(opts = {}) {
+    const silent = !!opts.silent;
+    if (!silent) {
+      state.loading = true;
+      render();
+    }
+    const date = ymd(state.date);
+    const list = state.league === "all" ? LEAGUES : LEAGUES.filter((l) => l.id === state.league);
+    const results = await Promise.allSettled(
+      list.map((l) => fetchJSON(`https://site.web.api.espn.com/apis/site/v2/sports/soccer/${l.id}/scoreboard?dates=${date}`).then((d) => ({ l, d })))
+    );
+    const matches = [];
+    results.forEach((r) => {
+      if (r.status !== "fulfilled") return;
+      const { l, d } = r.value;
+      (d.events || []).forEach((ev) => matches.push(parseMatch(ev, l)));
+    });
+    matches.sort((a, b) => {
+      if (a.isLive !== b.isLive) return a.isLive ? -1 : 1;
+      if (a.isDone !== b.isDone) return a.isDone ? 1 : -1;
+      return new Date(a.date) - new Date(b.date);
+    });
+    applyAssistCache(matches);
+    detectGoals(matches);
+    applyLineupCache(matches);
+    state.matches = matches;
+    state.loading = false;
+    keepScroll(() => render());
+    await enrichLineups(matches);
+    await enrichAssists(matches);
+    await enrichAssistsFotmob(matches);
+    saveAssists(matches);
+    trackDecisive(matches);
+    autoSettleBets(matches);
+    keepScroll(() => render());
+  }
+
+  function applyLineupCache(matches) {
+    matches.forEach((m) => {
+      if (state.lineups[m.id]) m.starters = state.lineups[m.id];
+    });
+  }
+  async function enrichLineups(matches) {
+    const need = matches.filter((m) => !m.isDone).slice(0, 24);
+    await Promise.allSettled(need.map(async (m) => {
+      try {
+        const d = await fetchJSON(`https://site.web.api.espn.com/apis/site/v2/sports/soccer/${m.leagueId}/summary?event=${m.id}`);
+        const starters = [];
+        (d.rosters || []).forEach((side) => {
+          (side.roster || []).forEach((r) => {
+            if (!r.starter || !r.athlete) return;
+            starters.push({
+              id: String(r.athlete.id || ""),
+              name: r.athlete.displayName || r.athlete.fullName || "",
+            });
+          });
+        });
+        if (starters.length) {
+          m.starters = starters;
+          state.lineups[m.id] = starters;
+        }
+      } catch { /* pas encore de compo */ }
+    }));
+  }
+  function starterNote(m) {
+    if (m.isLive || m.isDone || m.isHT) return "";
+    if (!m.starters || !m.starters.length) return "";
+    const mine = favs();
+    const hits = [];
+    const seen = new Set();
+    m.starters.forEach((s) => {
+      const hit = mine.find((p) => String(p.id) === String(s.id) || (p.name && s.name && p.name.toLowerCase() === s.name.toLowerCase()));
+      if (hit && !seen.has(String(hit.id))) {
+        seen.add(String(hit.id));
+        hits.push(hit.name);
+      }
+    });
+    if (!hits.length) return "";
+    if (hits.length === 1) return hits[0] + " est titulaire";
+    if (hits.length === 2) return hits[0] + " et " + hits[1] + " sont titulaires";
+    return hits.slice(0, -1).join(", ") + " et " + hits[hits.length - 1] + " sont titulaires";
+  }
+
+  function parseAssistedBy(text) {
+    const m = String(text || "").match(/Assisted by\s+([A-Za-zÀ-ÿ'.\- ]+?)(?:\s+with\b|[.]|$)/i);
+    return m ? m[1].trim() : "";
+  }
+
+  async function enrichAssists(matches) {
+    const need = matches.filter((m) => (m.scorers || []).some((s) => !s.assist) && (m.isLive || m.isDone));
+    if (!need.length) return;
+    const results = await Promise.allSettled(need.map(async (m) => {
+      const data = await fetchJSON(`https://site.web.api.espn.com/apis/site/v2/sports/soccer/${m.leagueId}/summary?event=${m.id}`);
+      const events = data.keyEvents || [];
+      const goals = events.filter((ev) => ev.scoringPlay);
+      m.scorers.forEach((s) => {
+        if (s.assist) return;
+        const hit = goals.find((ev) => {
+          const clock = (ev.clock && ev.clock.displayValue) || "";
+          return clock === s.minute;
+        }) || goals.find((ev) => {
+          const names = (ev.participants || []).map((p) => (p.athlete || {}).displayName);
+          return names[0] === s.scorer;
+        });
+        if (!hit) return;
+        const parts = hit.participants || [];
+        if (parts[1] && parts[1].athlete) {
+          s.assist = parts[1].athlete.displayName;
+          s.assistId = String(parts[1].athlete.id || "");
+        } else {
+          const name = parseAssistedBy(hit.text);
+          if (name) s.assist = name;
+        }
+      });
+    }));
+    const still = matches.filter((m) => (m.scorers || []).some((s) => !s.assist) && (m.isLive || m.isDone));
+    if (still.length) await enrichAssistsScore(still);
+    return results;
+  }
+
+  const SCORE_LEAGUES = {
+    "eng.1": "epl", "esp.1": "liga", "ita.1": "seri", "ger.1": "bund",
+    "fra.1": "fran", "ksa.1": "saudipl", "ned.1": "ned", "por.1": "ptpl",
+    "chn.1": "chsl", "usa.1": "mls"
+  };
+
+  function normName(s) {
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/\b(al|fc|cf|sc|ac|as|ss|ud|cd|rc|afc|the)\b/g, " ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  }
+
+  function namesMatch(a, b) {
+    const na = normName(a), nb = normName(b);
+    if (!na || !nb) return false;
+    if (na === nb) return true;
+    if (na.includes(nb) || nb.includes(na)) return true;
+    const ta = new Set(na.split(" ").filter((w) => w.length > 2));
+    const tb = nb.split(" ").filter((w) => w.length > 2);
+    return tb.filter((w) => ta.has(w)).length >= 1;
+  }
+
+  async function enrichAssistsScore(matches) {
+    const bySlug = {};
+    matches.forEach((m) => {
+      const slug = SCORE_LEAGUES[m.leagueId];
+      if (!slug) return;
+      (bySlug[slug] ||= []).push(m);
+    });
+    for (const slug of Object.keys(bySlug)) {
+      let events;
+      try { events = await fetchJSON("https://api.thescore.com/" + slug + "/events"); }
+      catch { continue; }
+      if (!Array.isArray(events)) continue;
+      for (const m of bySlug[slug]) {
+        const day = (m.date || "").slice(0, 10);
+        const cand = events.filter((ev) => {
+          const gd = ev.game_date || "";
+          if (day && !gd.includes(day) && !gd.includes(new Date(m.date).toUTCString().slice(5, 16))) {
+            const d = new Date(gd);
+            const md = new Date(m.date);
+            if (isNaN(d) || isNaN(md)) return false;
+            if (d.toISOString().slice(0,10) !== md.toISOString().slice(0,10)) return false;
+          }
+          const home = (ev.home_team || {}).name || (ev.home_team || {}).full_name || "";
+          const away = (ev.away_team || {}).name || (ev.away_team || {}).full_name || "";
+          return (namesMatch(home, m.home.name) && namesMatch(away, m.away.name))
+              || (namesMatch(home, m.away.name) && namesMatch(away, m.home.name));
+        });
+        const ev = cand[0];
+        if (!ev) continue;
+        let pbp;
+        try { pbp = await fetchJSON("https://api.thescore.com/" + slug + "/events/" + ev.id + "/play_by_play_records"); }
+        catch { continue; }
+        if (!Array.isArray(pbp)) continue;
+        const goals = pbp.filter((r) => (r.category || "") === "Goal");
+        m.scorers.forEach((s) => {
+          if (s.assist) return;
+          const min = parseInt(String(s.minute).replace(/\D/g, ""), 10);
+          const hit = goals.find((g) => {
+            const gn = (g.player && (g.player.full_name || g.player.name)) || "";
+            return namesMatch(gn, s.scorer) && (!min || g.minutes === min || Math.abs((g.minutes || 0) - min) <= 1);
+          }) || goals.find((g) => namesMatch((g.player && (g.player.full_name || g.player.name)) || "", s.scorer));
+          if (!hit) return;
+          const as = hit.assist;
+          if (as && (as.full_name || as.name)) {
+            s.assist = as.full_name || as.name;
+            s.assistId = String(as.id || "");
+          } else {
+            const name = parseAssistedBy(hit.description);
+            if (name) s.assist = name;
+          }
+        });
+      }
+    }
+  }
+
+  function trackDecisive(matches) {
+    const f = favs();
+    if (!f.length) return;
+    const ids = new Set(f.map((p) => String(p.id)));
+    const log = loadJson("gucci_decisive", []);
+    matches.forEach((m) => {
+      m.scorers.forEach((s) => {
+        [
+          s.scorerId && { pid: s.scorerId, type: "but", name: s.scorer },
+          s.assistId && { pid: s.assistId, type: "passe", name: s.assist },
+        ].filter(Boolean).forEach((hit) => {
+          if (!ids.has(hit.pid)) return;
+          const key = `${m.id}-${hit.pid}-${s.minute}-${hit.type}`;
+          if (log.some((x) => x.key === key)) return;
+          log.unshift({
+            key,
+            playerId: hit.pid,
+            playerName: hit.name,
+            type: hit.type,
+            minute: s.minute,
+            match: `${m.home.name} ${m.home.score}-${m.away.score} ${m.away.name}`,
+            league: m.league,
+            date: m.date,
+          });
+        });
+      });
+    });
+    saveJson("gucci_decisive", log.slice(0, 200));
+  }
+
+  function addFav(p) {
+    const list = favs();
+    if (list.some((x) => String(x.id) === String(p.id))) {
+      toast("Déjà dans les favoris");
+      return;
+    }
+    const cat = (CATALOG || []).find((x) => String(x.id) === String(p.id));
+    let team = p.team || (cat && cat.team) || "";
+    let league = p.league || (cat && cat.league) || "";
+    if (isNonClubComp(league) && cat && cat.league) league = cat.league;
+    const mapped = knownLeagueName(league);
+    if (mapped) league = mapped;
+    list.unshift({
+      id: String(p.id),
+      name: p.name,
+      team,
+      league,
+      pos: p.pos || "",
+    });
+    saveJson(LS_FAV, list);
+    toast(`${p.name} ajouté`);
+    render();
+    refreshOneStat(p.id);
+  }
+
+  let pendingRm = null;
+  function hideConfirm() {
+    pendingRm = null;
+    const bg = document.getElementById("confirmBg");
+    if (bg) bg.hidden = true;
+  }
+  function removeFav(id) {
+    const p = favs().find((x) => String(x.id) === String(id));
+    const label = p && p.name ? p.name : "ce joueur";
+    pendingRm = String(id);
+    const txt = document.getElementById("confirmTxt");
+    const bg = document.getElementById("confirmBg");
+    if (txt) txt.textContent = "Voulez vous retirer " + label + " des favoris ?";
+    if (bg) bg.hidden = false;
+  }
+  function confirmRemoveFav() {
+    if (!pendingRm) { hideConfirm(); return; }
+    saveJson(LS_FAV, favs().filter((x) => String(x.id) !== String(pendingRm)));
+    hideConfirm();
+    render();
+  }
+
+  function isFav(id) { return favs().some((p) => String(p.id) === String(id)); }
+
+  function fold(s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+  function catalogSearch(q) {
+    const s = fold(q.trim());
+    if (!s) return [];
+    return (CATALOG || []).filter((p) => fold(`${p.name} ${p.team} ${p.league}`).includes(s));
+  }
+
+  async function searchTeamRoster(namePart, teamPart) {
+    const data = await fetchJSON("https://site.web.api.espn.com/apis/search/v2?query=" + encodeURIComponent(teamPart) + "&limit=15");
+    const teams = [];
+    (data.results || []).forEach((block) => {
+      if (String(block.type || "").toLowerCase() !== "team") return;
+      (block.contents || []).forEach((c) => {
+        if (c.sport && c.sport !== "soccer") return;
+        const uid = String(c.uid || "");
+        const tid = uid.includes("t:") ? uid.split("t:").pop() : "";
+        if (!tid) return;
+        const league = knownLeagueName(c.subtitle || c.description || "") || knownLeagueName(teamPart);
+        const slug = (LEAGUES.find((l) => l.name === league) || {}).id || "chn.1";
+        teams.push({ tid, slug, name: c.displayName, league: c.subtitle || league });
+      });
+    });
+    const out = [];
+    const needle = fold(namePart);
+    for (const team of teams.slice(0, 3)) {
+      try {
+        const ros = await fetchJSON("https://site.web.api.espn.com/apis/site/v2/sports/soccer/" + team.slug + "/teams/" + team.tid + "/roster");
+        const athletes = [];
+        (ros.athletes || []).forEach((g) => {
+          if (g && g.displayName && g.id) athletes.push(g);
+          (g.items || []).forEach((a) => athletes.push(a));
+        });
+        athletes.forEach((a) => {
+          const n = a.displayName || a.fullName || "";
+          if (!fold(n).includes(needle)) return;
+          out.push({
+            id: String(a.id),
+            name: n,
+            team: team.name,
+            league: team.league || "",
+            pos: (a.position && a.position.abbreviation) || "",
+          });
+        });
+      } catch { /* roster indispo */ }
+    }
+    return out;
+  }
+  async function remoteSearch(q) {
+    if (q.trim().length < 3) {
+      state.searchRemote = [];
+      return;
+    }
+    try {
+      const data = await fetchJSON("https://site.web.api.espn.com/apis/search/v2?query=" + encodeURIComponent(q) + "&limit=25");
+      const out = [];
+      (data.results || []).forEach((block) => {
+        const type = String(block.type || block.name || "").toLowerCase();
+        if (type && !/player|athlete/.test(type)) return;
+        (block.contents || block.items || []).forEach((c) => {
+          const web = ((c.link && (c.link.web || c.link.href)) || c.href || "") + " " + (c.sport || "") + " " + (c.description || "");
+          const looksSoccer = /soccer|football|ligue|liga|bundes|premier|eredivisie|mls|super lig|pro league/i.test(web);
+          const looksOther = /nba|nfl|mlb|nhl|tennis|golf|f1|nascar|wnba|ncaa/i.test(web);
+          if (looksOther && !looksSoccer) return;
+          const uid = c.uid || c.id || "";
+          let id = "";
+          if (String(uid).includes("a:")) id = String(uid).split("a:").pop();
+          else if (/^\d+$/.test(String(c.id || ""))) id = String(c.id);
+          if (!id) return;
+          out.push({
+            id,
+            name: c.displayName || c.title || c.name || "",
+            team: c.subtitle || (c.team && c.team.displayName) || "",
+            league: c.description || "",
+            pos: "",
+          });
+        });
+      });
+      const parts = q.trim().split(/\s+/);
+      if (parts.length >= 2) {
+        const extra = await searchTeamRoster(parts[0], parts.slice(1).join(" "));
+        extra.forEach((p) => {
+          if (!out.some((x) => String(x.id) === String(p.id))) out.unshift(p);
+        });
+      }
+      state.searchRemote = out;
+      if (state.tab === "favs") render();
+    } catch {
+      state.searchRemote = [];
+      if (state.tab === "favs") render();
+    }
+  }
+
+  function isNationalOrFriendly(s) {
+    return /friendly|nations league|world cup|afcon|\beuro\b|european championship|asian cup|qualifying|copa am[eé]rica|all[- ]?stars|olympics|under-?\d|\bu\d\d\b|youth|espoir/i.test(String(s || ""));
+  }
+  function isOfficialSeasonLabel(s) {
+    const n = String(s || "").toLowerCase();
+    if (!n || isNationalOrFriendly(n)) return false;
+    if (/2026-27|2026-2027|2026\/27/.test(n)) return true;
+    if (/2026/.test(n) && /(mls|major league soccer|usa\.1|chinese|chn\.1|leagues cup|concacaf)/i.test(n)) return true;
+    return false;
+  }
+  function seasonSplit(split) {
+    return isOfficialSeasonLabel((split.displayName || "") + " " + (split.abbreviation || ""));
+  }
+
+  async function refreshOneStat(id) {
+    try {
+      const data = await fetchJSON(`https://site.web.api.espn.com/apis/common/v3/sports/soccer/athletes/${id}/overview`);
+      const clubInfo = pickClubInfo(data);
+      let goals = 0, assists = 0, label = "2026-27 officiel";
+      const bag = {};
+      const compBucket = (key) => {
+        const l = String(key || "").toLowerCase();
+        if (!l || isNationalOrFriendly(l)) return "";
+        if (/leagues cup/.test(l)) return "leaguescup";
+        if (/concacaf/.test(l)) return "concacaf";
+        if (/champions league|uefa\.champions/.test(l)) return "ucl";
+        if (/europa league|uefa\.europa/.test(l)) return "uel";
+        if (/conference league/.test(l)) return "uecl";
+        if (/club world|intercontinental/.test(l)) return "cwc";
+        if (/copa del rey/.test(l)) return "coparey";
+        if (/fa cup/.test(l)) return "facup";
+        if (/dfb|pokal/.test(l)) return "dfb";
+        if (/coupe de france/.test(l)) return "cdf";
+        if (/supercopa|super cup|super ?coupe/.test(l)) return "supercup";
+        const known = LEAGUES.find((lg) => l === lg.id || l.includes(lg.id) || l.includes(lg.name.toLowerCase())
+          || (lg.id === "esp.1" && /laliga|la liga/.test(l))
+          || (lg.id === "usa.1" && /\bmls\b|major league/.test(l))
+          || (lg.id === "ksa.1" && /saudi|pro league/.test(l))
+          || (lg.id === "tur.1" && /s[uü]per\s*lig/.test(l))
+          || (lg.id === "chn.1" && /chinese|chn\.1/.test(l))
+          || (lg.id === "por.1" && /liga portugal|primeira/.test(l)));
+        if (known) return known.id;
+        if (!isOfficialSeasonLabel(l)) return "";
+        return "other:" + l.replace(/20\d\d[-/]?20\d\d|20\d\d[-/]\d\d|20\d\d/g, "").replace(/\s+/g, " ").trim();
+      };
+      const put = (key, g, a) => {
+        const k = compBucket(key);
+        if (!k) return;
+        const prev = bag[k];
+        if (!prev || (g + a) > (prev.g + prev.a)) bag[k] = { g, a };
+      };
+      const ov = data.statistics || {};
+      const ovNames = ov.names || [];
+      const og = ovNames.indexOf("totalGoals");
+      const oa = ovNames.indexOf("goalAssists");
+      (ov.splits || []).forEach((sp) => {
+        if (!seasonSplit(sp)) return;
+        put(sp.displayName || sp.abbreviation || "ov", Number((sp.stats || [])[og] || 0), Number((sp.stats || [])[oa] || 0));
+      });
+      try {
+        const extra = await fetchJSON("https://site.web.api.espn.com/apis/common/v3/sports/soccer/athletes/" + id + "/stats");
+        const cat = ((extra.categories || [])[0]) || {};
+        const names = cat.names || [];
+        const gIdx = names.indexOf("G") >= 0 ? names.indexOf("G") : names.indexOf("totalGoals");
+        const aIdx = names.indexOf("A") >= 0 ? names.indexOf("A") : names.indexOf("goalAssists");
+        (cat.statistics || []).forEach((row) => {
+          const title = [(row.displayName || ""), row.leagueSlug || "", ((row.season || {}).type || {}).abbreviation || ""].join(" ");
+          if (!isOfficialSeasonLabel(title) && !compBucket(title)) return;
+          if (!isOfficialSeasonLabel(title)) return;
+          const st = row.stats || [];
+          put(title || row.leagueSlug || "stats", Number(st[gIdx] || 0), Number(st[aIdx] || 0));
+        });
+      } catch { /* overview only */ }
+      Object.values(bag).forEach((x) => { goals += x.g; assists += x.a; });
+      const map = cachedStats();
+      map._v = 5;
+      map[id] = { goals, assists, ga: goals + assists, updated: Date.now(), label, team: clubInfo.team, league: clubInfo.league };
+      saveJson(LS_STATS, map);
+      if (clubInfo.team || clubInfo.league) {
+        const list = favs().map((p) => String(p.id) === String(id) ? {
+          ...p,
+          team: clubInfo.team || p.team,
+          league: clubInfo.league || p.league,
+        } : p);
+        saveJson(LS_FAV, list);
+      }
+      if (state.tab === "rank" || state.tab === "favs") render();
+    } catch { /* ignore */ }
+  }
+
+  function isNonClubComp(s) {
+    return /friendly|nations|world cup|afcon|euro|asian cup|qualifying|copa am[eé]rica|all[- ]?stars|olympics|under-?\d|u\d\d|youth|espoir|concacaf|leagues cup|champions cup|champions league|europa|conference league|club world|super ?cup|fa cup|copa del rey|dfb[- ]pokal|coupe de france|copa libertadores|sudamericana/i.test(String(s || ""));
+  }
+  function isAllStarTeam(s) {
+    return /all[- ]?stars/i.test(String(s || ""));
+  }
+  function knownLeagueName(name) {
+    const n = String(name || "").toLowerCase();
+    const hit = LEAGUES.find((l) => n === l.id || n.includes(l.name.toLowerCase()) || n.includes(l.short.toLowerCase())
+      || (l.id === "ksa.1" && /saudi|pro league|spl/.test(n))
+      || (l.id === "usa.1" && /\bmls\b|major league soccer|usa\.1/.test(n))
+      || (l.id === "tur.1" && /s[uü]per\s*lig|turkish|tur\.1/.test(n))
+      || (l.id === "chn.1" && ((/chinese|super league/.test(n) && !/swiss/.test(n)) || n === "chn.1"))
+      || (l.id === "ned.1" && /eredivisie/.test(n))
+      || (l.id === "por.1" && /liga portugal|primeira/.test(n))
+      || (l.id === "bra.1" && /brasil|brazil|brasileir|serie a bra|bra\.1/.test(n)));
+    return hit ? hit.name : "";
+  }
+  function pickClubInfo(data) {
+    const opts = ((((data.statistics || {}).filters || [])[0] || {}).options) || [];
+    const nextLg = ((((data.nextGame || {}).league) || {}).name) || "";
+    const nextMapped = knownLeagueName(nextLg);
+    const candidates = [];
+    opts.forEach((opt) => {
+      const team = opt.displayValue || "";
+      if (!team || isAllStarTeam(team) || isCountryLabel(team)) return;
+      const leagues = (((opt.menu || {}).options) || []).map((l) => l.displayValue || "");
+      const mappedLeagues = leagues.map(knownLeagueName).filter(Boolean);
+      const domestic = leagues.filter((n) => !isNonClubComp(n));
+      let league = mappedLeagues[0] || (domestic[0] ? (knownLeagueName(domestic[0]) || "") : "") || nextMapped;
+      if (!league && nextMapped) league = nextMapped;
+      if (!league) return;
+      let score = 2;
+      if (mappedLeagues.length) score += 6;
+      if (nextMapped && (mappedLeagues.includes(nextMapped) || knownLeagueName(nextLg) === league)) score += 8;
+      if (leagues.some((n) => /\bmls\b|major league/i.test(n))) score += 4;
+      candidates.push({ team, league, score });
+    });
+    candidates.sort((a, b) => b.score - a.score);
+    if (candidates.length) return candidates[0];
+    const fallbackTeam = (opts.find((o) => o.displayValue && !isAllStarTeam(o.displayValue) && !isCountryLabel(o.displayValue)) || {}).displayValue || "";
+    return { team: fallbackTeam, league: nextMapped || "" };
+  }
+  function pickClubName(data) { return pickClubInfo(data).team; }
+
+  async function refreshAllStats() {
+    const list = favs();
+    await Promise.allSettled(list.map((p) => refreshOneStat(p.id)));
+  }
+
+  function goalHalf(minute) {
+    const s = String(minute || "");
+    const n = parseInt(s.replace(/\D/g, ""), 10);
+    if (!Number.isFinite(n)) return 0;
+    if (/\+/.test(s) && n <= 45) return 1;
+    return n <= 45 ? 1 : 2;
+  }
+  function matchById(id, matches) {
+    return (matches || state.matches).find((m) => String(m.id) === String(id));
+  }
+  function playerHit(m, player, field) {
+    if (!m || !player) return [];
+    const pid = String(player.id || "");
+    const n = (player.name || "").toLowerCase();
+    return (m.scorers || []).filter((s) => {
+      const val = field === "assist" ? s.assist : s.scorer;
+      const id = field === "assist" ? s.assistId : s.scorerId;
+      if (pid && id && String(id) === pid) return true;
+      const vn = String(val || "").toLowerCase();
+      return n && vn && (vn === n || vn.includes(n) || n.includes(vn));
+    });
+  }
+  function evalSelection(sel, matches) {
+    const m = matchById(sel.matchId, matches);
+    if (!m || !m.isDone) return "open";
+    const hg = Number(m.home.score) || 0;
+    const ag = Number(m.away.score) || 0;
+    const tot = hg + ag;
+    const res = hg > ag ? "1" : hg < ag ? "2" : "N";
+    const mk = sel.market;
+    if (mk === "1n2") return sel.pick === res ? "won" : "lost";
+    if (mk === "dc") {
+      if (sel.pick === "1N") return res !== "2" ? "won" : "lost";
+      if (sel.pick === "N2") return res !== "1" ? "won" : "lost";
+    }
+    if (mk === "btts") {
+      const yes = hg > 0 && ag > 0;
+      return (sel.pick === "oui" ? yes : !yes) ? "won" : "lost";
+    }
+    if (mk === "goals") {
+      const line = Number(sel.line);
+      if (sel.pick === "over") return tot > line ? "won" : "lost";
+      if (sel.pick === "under") return tot < line ? "won" : "lost";
+      if (sel.pick === "exact") return tot === line ? "won" : "lost";
+    }
+    if (mk === "player") {
+      const p = { id: sel.playerId, name: sel.playerName };
+      const goals = playerHit(m, p, "scorer").filter((s) => s.kind !== "csc");
+      const assists = playerHit(m, p, "assist");
+      const g1 = goals.filter((s) => goalHalf(s.minute) === 1);
+      const g2 = goals.filter((s) => goalHalf(s.minute) === 2);
+      const typ = sel.playerMarket;
+      if (typ === "buteur") return goals.length ? "won" : "lost";
+      if (typ === "passeur") return assists.length ? "won" : "lost";
+      if (typ === "decisif") return goals.length || assists.length ? "won" : "lost";
+      if (typ === "buteur_1mt") return g1.length ? "won" : "lost";
+      if (typ === "buteur_2mt") return g2.length ? "won" : "lost";
+      if (typ === "buteur_passeur") return goals.length && assists.length ? "won" : "lost";
+      if (typ === "buteur_2periodes") return g1.length && g2.length ? "won" : "lost";
+    }
+    return "open";
+  }
+  function selLabel(sel) {
+    const game = sel.matchLabel || "";
+    if (sel.market === "1n2") return game + " · " + (sel.pick === "1" ? "Victoire 1" : sel.pick === "2" ? "Victoire 2" : "Nul");
+    if (sel.market === "dc") return game + " · Double chance " + sel.pick;
+    if (sel.market === "btts") return game + " · L2EM " + (sel.pick === "oui" ? "Oui" : "Non");
+    if (sel.market === "goals") {
+      const w = sel.pick === "over" ? "+" : sel.pick === "under" ? "−" : "=";
+      return game + " · Buts " + w + sel.line;
+    }
+    const pm = { buteur:"Buteur", passeur:"Passeur", decisif:"Décisif", buteur_1mt:"Buteur 1MT", buteur_2mt:"Buteur 2MT", buteur_passeur:"Buteur + passeur", buteur_2periodes:"Buteur dans les 2 MT" }[sel.playerMarket] || "Joueur";
+    return game + " · " + (sel.playerName || "") + " · " + pm;
+  }
+  function typeLabel(x) {
+    return x === "combo" ? "Combiné" : x === "single" ? "Simple" : x === "buteur" ? "Buteur" : x === "passeur" ? "Passeur" : x || "Pari";
+  }
+  function statusLabel(s) {
+    return { open:"ouvert", won:"gagné", lost:"perdu", cancelled:"annulé", refunded:"remboursé" }[s] || s;
+  }
+  function comboOdds(sels) {
+    return +sels.reduce((acc, s) => acc * Number(s.odds || 1), 1).toFixed(3);
+  }
+  function createSelection() {
+    const m = matchById(state.betMatch);
+    if (!m) return toast("Choisis un match");
+    const odds = Number(String(state.betOdds).replace(",", "."));
+    if (!(odds > 1)) return toast("Côte invalide");
+    const mk = state.betMarket;
+    const sel = { id: uid(), market: mk, matchId: String(m.id), matchLabel: m.home.name + " – " + m.away.name, odds };
+    if (mk === "1n2") sel.pick = state.betPick || "1";
+    else if (mk === "dc") sel.pick = state.betPick === "N2" ? "N2" : "1N";
+    else if (mk === "btts") sel.pick = state.betBtts || "oui";
+    else if (mk === "goals") {
+      sel.pick = ["over","under","exact"].includes(state.betPick) ? state.betPick : "over";
+      sel.line = Number(state.betLine) || 2.5;
+    } else if (mk === "player") {
+      const player = favs().find((p) => String(p.id) === String(state.betPlayer));
+      if (!player) return toast("Choisis un joueur");
+      sel.playerId = player.id;
+      sel.playerName = player.name;
+      sel.playerMarket = state.betType || "buteur";
+    }
+    state.slip.push(sel);
+    state.betOdds = "";
+    toast("Ajouté au coupon");
+    render();
+  }
+  function removeSlip(id) {
+    state.slip = state.slip.filter((s) => s.id !== id);
+    render();
+  }
+  function createBet() {
+    if (!state.slip.length) return toast("Coupon vide");
+    const stake = Number(state.betStake);
+    if (!(stake > 0)) return toast("Mise invalide");
+    const isCombo = state.slip.length > 1;
+    const odds = comboOdds(state.slip);
+    const list = bets();
+    list.unshift({
+      id: uid(),
+      type: isCombo ? "combo" : "single",
+      selections: state.slip.slice(),
+      stake,
+      odds,
+      potential: +(stake * odds).toFixed(2),
+      status: "open",
+      createdAt: Date.now(),
+    });
+    saveJson(LS_BETS, list);
+    state.slip = [];
+    state.betStake = "";
+    toast(isCombo ? "Combiné enregistré" : "Pari enregistré");
+    autoSettleBets(state.matches);
+    render();
+  }
+  function deleteBet(id) {
+    saveJson(LS_BETS, bets().filter((b) => b.id !== id));
+    render();
+  }
+  function removeBetSelection(betId, selId) {
+    const list = bets().map((b) => {
+      if (b.id !== betId) return b;
+      const sels = (b.selections || []).filter((s, i) => String(s.id || i) !== String(selId));
+      if (!sels.length) return null;
+      const odds = comboOdds(sels);
+      return {
+        ...b,
+        selections: sels,
+        type: sels.length > 1 ? "combo" : "single",
+        odds,
+        potential: +(Number(b.stake) * odds).toFixed(2),
+        status: "open",
+        gain: 0,
+        profit: 0,
+        settledAt: null,
+      };
+    }).filter(Boolean);
+    saveJson(LS_BETS, list);
+    autoSettleBets(state.matches);
+    render();
+  }
+  function settle(id, status) {
+    const list = bets().map((b) => {
+      if (b.id !== id) return b;
+      let profit = 0, gain = 0;
+      if (status === "won") { gain = +(b.stake * b.odds).toFixed(2); profit = +(gain - b.stake).toFixed(2); }
+      else if (status === "lost") { gain = 0; profit = -b.stake; }
+      else { gain = b.stake; profit = 0; }
+      return { ...b, status, gain, profit, settledAt: Date.now() };
+    });
+    saveJson(LS_BETS, list);
+    render();
+  }
+  function autoSettleBets(matches) {
+    const list = bets();
+    let changed = false;
+    const next = list.map((b) => {
+      if (b.status && b.status !== "open") return b;
+      const sels = b.selections || [];
+      if (!sels.length) return b;
+      const results = sels.map((s) => evalSelection(s, matches));
+      if (results.some((r) => r === "lost")) {
+        changed = true;
+        return { ...b, status: "lost", gain: 0, profit: -b.stake, settledAt: Date.now() };
+      }
+      if (results.every((r) => r === "won")) {
+        const gain = +(b.stake * b.odds).toFixed(2);
+        changed = true;
+        return { ...b, status: "won", gain, profit: +(gain - b.stake).toFixed(2), settledAt: Date.now() };
+      }
+      return b;
+    });
+    if (changed) saveJson(LS_BETS, next);
+  }
+  function betSummary() {
+    const list = bets();
+    const settled = list.filter((b) => b.status === "won" || b.status === "lost");
+    const mise = settled.reduce((s, b) => s + Number(b.stake || 0), 0);
+    const gains = settled.reduce((s, b) => s + (b.status === "won" ? Number(b.stake) * Number(b.odds) : 0), 0);
+    return { mise, gains, benef: gains - mise };
+  }
+
+  function matchFavs() { return loadJson(LS_MATCH_FAV, []); }
+  function isMatchFav(id) { return matchFavs().includes(String(id)); }
+  function toggleMatchFav(id) {
+    id = String(id);
+    let list = matchFavs();
+    if (list.includes(id)) list = list.filter((x) => x !== id);
+    else list.unshift(id);
+    saveJson(LS_MATCH_FAV, list);
+    keepScroll(() => render());
+  }
+  function detectGoals(matches) {
+    const now = Date.now();
+    let flash = false;
+    matches.forEach((m) => {
+      const key = String(m.home.score) + "-" + String(m.away.score);
+      const prev = state.scoreSnap[m.id];
+      state.scoreSnap[m.id] = key;
+      if (prev == null || prev === key) return;
+      const [ph, pa] = prev.split("-").map((n) => Number(n) || 0);
+      const nh = Number(m.home.score) || 0;
+      const na = Number(m.away.score) || 0;
+      if (nh + na > ph + pa) {
+        state.goalUntil[m.id] = now + 5000;
+        flash = true;
+        if (getSettings().vibrateGoals && navigator.vibrate) {
+          navigator.vibrate([35, 40, 35]);
+        }
+      }
+    });
+    if (flash) {
+      clearTimeout(detectGoals._t);
+      detectGoals._t = setTimeout(() => {
+        if (state.tab === "matches") keepScroll(() => render());
+      }, 5200);
+    }
+  }
+  function statusBadge(m) {
+    if (m.isDone) return `<span class="st-fin">FIN</span>`;
+    if (m.isHT) return `<span class="st-ht">MT</span>`;
+    if (m.isLive) return `<span class="live-pill"><span class="dot"></span>${m.clock || "LIVE"}</span>`;
+    return `<span class="league-tag">${m.clock}</span>`;
+  }
+
+  function renderMatches() {
+    const starredIds = new Set(matchFavs().map(String));
+    const live = state.matches.filter((m) => m.isLive);
+    const starred = state.matches.filter((m) => !m.isLive && starredIds.has(String(m.id)));
+    const rest = state.matches.filter((m) => !m.isLive && !starredIds.has(String(m.id)));
+    return `
+      <div class="date-nav">
+        <button id="dPrev">‹</button>
+        <div class="date-label">${prettyDate(state.date)}</div>
+        <button id="dNext">›</button>
+      </div>
+      <div class="chips" id="leagueChips">
+        <button class="chip ${state.league === "all" ? "on" : ""}" data-lg="all">Tous</button>
+        ${LEAGUES.map((l) => `<button class="chip ${state.league === l.id ? "on" : ""}" data-lg="${l.id}">${l.short}</button>`).join("")}
+      </div>
+      ${state.loading ? `<div class="loading">Chargement des matchs…</div>` : ""}
+      ${!state.loading && !state.matches.length ? `<div class="empty">Aucun match ce jour pour ces championnats.</div>` : ""}
+      ${live.length ? `<h2 class="sec">En direct</h2>` : ""}
+      ${live.map((m) => matchCard(m, true)).join("")}
+      ${starred.length ? `<h2 class="sec">Favoris</h2>` : ""}
+      ${starred.map((m) => matchCard(m, false)).join("")}
+      ${rest.length ? `<h2 class="sec">Aujourd'hui</h2>` : ""}
+      ${rest.map((m) => matchCard(m, false)).join("")}
+    `;
+  }
+
+
+  function isFavPlayer(id, name) {
+    const list = favs();
+    const sid = String(id || "");
+    const n = (name || "").toLowerCase().trim();
+    return list.some((p) => {
+      if (sid && String(p.id) === sid) return true;
+      const pn = (p.name || "").toLowerCase().trim();
+      return n && pn && (pn === n || pn.includes(n) || n.includes(pn));
+    });
+  }
+  function markFav(name, id) {
+    const safe = String(name || "").replace(/</g, "");
+    if (!safe) return "";
+    return isFavPlayer(id, safe) ? `<span class="fav-hit">${safe}</span>` : safe;
+  }
+
+  function scorerLine(s, side) {
+    const extra = s.kind === "pen" ? " (P)" : s.kind === "csc" ? " (CSC)" : "";
+    const scorer = markFav(s.scorer, s.scorerId);
+    const assist = s.assist ? ` <span class="assist">(${markFav(s.assist, s.assistId)})</span>` : "";
+    const min = `<span class="min">${s.minute}</span>`;
+    const name = `<span class="evname"><b>${scorer}</b>${extra}${assist}</span>`;
+    return side === "away"
+      ? `<div class="ev away">${name}${min}</div>`
+      : `<div class="ev home">${min}${name}</div>`;
+  }
+  function scorerSide(m, s) {
+    const tid = String(s.teamId || "");
+    if (tid && m.home.id && tid === String(m.home.id)) return "home";
+    if (tid && m.away.id && tid === String(m.away.id)) return "away";
+    if (s.side === "away" || s.side === "home") return s.side;
+    return "home";
+  }
+  function matchCard(m, big) {
+    const homeEv = (m.scorers || []).filter((s) => scorerSide(m, s) === "home").map((s) => scorerLine(s, "home")).join("");
+    const awayEv = (m.scorers || []).filter((s) => scorerSide(m, s) === "away").map((s) => scorerLine(s, "away")).join("");
+    const events = (homeEv || awayEv)
+      ? `<div class="events split"><div class="evcol">${homeEv}</div><div class="evcol away">${awayEv}</div></div>`
+      : (big && m.isLive ? `<div class="events"><div class="ev">Pas encore de but</div></div>` : "");
+    const flashing = Date.now() < (state.goalUntil[m.id] || 0);
+    const favOn = isMatchFav(m.id);
+    return `
+      <article class="match ${m.isLive ? "live" : ""} ${m.isDone ? "finished" : ""} ${m.isHT ? "ht" : ""} ${flashing ? "goal-flash" : ""}" data-mid="${m.id}">
+        ${flashing ? `<div class="buuut">BUUUT!</div>` : ""}
+        <button class="star ${favOn ? "on" : ""}" data-star="${m.id}" aria-label="Favori">${favOn ? "★" : "☆"}</button>
+        <div class="row space match-head">
+          <span class="league-tag">${m.league}</span>
+        </div>
+        <div class="scoreboard">
+          <div class="team">
+            ${m.home.logo ? `<img class="crest" src="${m.home.logo}" alt="">` : ""}
+            <span class="tname">${m.home.name}</span>
+          </div>
+          <div>
+            <div class="score">${m.isDone || m.isLive ? `${m.home.score}–${m.away.score}` : "–"}</div>
+            <div class="clock">${statusBadge(m)}</div>
+          </div>
+          <div class="team away">
+            <span class="tname">${m.away.name}</span>
+            ${m.away.logo ? `<img class="crest" src="${m.away.logo}" alt="">` : ""}
+          </div>
+        </div>
+        ${starterNote(m) ? `<div class="xi">${starterNote(m)}</div>` : ""}
+        ${events}
+      </article>
+    `;
+  }
+
+  function renderFavs() {
+    const q = state.q.trim();
+    const local = catalogSearch(q);
+    const remote = [...local, ...state.searchRemote].filter((p, i, arr) => {
+      if (favs().some((x) => String(x.id) === String(p.id))) return false;
+      return arr.findIndex((x) => String(x.id) === String(p.id) || fold(x.name) === fold(p.name)) === i;
+    });
+    const mine = favs().slice().sort((a, b) => {
+      const da = playsToday(a) ? 0 : 1;
+      const db = playsToday(b) ? 0 : 1;
+      if (da !== db) return da - db;
+      return String(a.name).localeCompare(String(b.name));
+    });
+    const results = q.length >= 3 ? remote : [];
+    return `
+      <input class="search" id="playerSearch" placeholder="Rechercher un joueur…" value="${escapeAttr(state.q)}" />
+      ${q.length >= 3 ? `
+        <div id="searchList" style="margin-top:8px">
+          ${results.length ? results.slice(0, 20).map((p) => playerRow(p, false)).join("") : `<div class="empty">Aucun résultat.</div>`}
+        </div>` : (state.q.length && state.q.length < 3 ? `<div class="empty">Tape au moins 3 lettres.</div>` : "")}
+      <h2 class="sec">Mes joueurs</h2>
+      ${mine.length ? mine.map((p) => playerRow(p, true)).join("") : `<div class="empty">Aucun favori. Utilise la recherche en haut.</div>`}
+    `;
+  }
+
+  function teamMatchesPlayer(p, team) {
+    const a = String(p.team || "").toLowerCase();
+    const names = [team && team.name, team && team.full].map((x) => String(x || "").toLowerCase()).filter(Boolean);
+    return a && names.some((n) => n === a || n.includes(a) || a.includes(n));
+  }
+  function playsToday(p) {
+    return (state.matches || []).some((m) => teamMatchesPlayer(p, m.home) || teamMatchesPlayer(p, m.away));
+  }
+  function clubLine(p) {
+    const cat = (CATALOG || []).find((x) => String(x.id) === String(p.id) || (x.name && p.name && fold(x.name) === fold(p.name)));
+    let team = (p.team && !isCountryLabel(p.team) && !isAllStarTeam(p.team)) ? p.team : "";
+    let league = p.league || "";
+    if ((!team || isNonClubComp(league)) && cat) {
+      team = team || cat.team || "";
+      if (isNonClubComp(league) || !league) league = cat.league || "";
+    }
+    const mapped = knownLeagueName(league);
+    if (mapped) league = mapped;
+    else if (isNonClubComp(league)) league = "";
+    return [team, league].filter(Boolean).join(" · ");
+  }
+  function playerRow(p, isMine) {
+    const today = isMine && playsToday(p);
+    return `
+      <div class="player">
+        <div style="min-width:0;flex:1">
+          <div class="pname">${p.name}${today ? ` <span class="badge-play">Joue</span>` : ""}</div>
+          <div class="pmeta">${clubLine(p)}</div>
+        </div>
+        ${isMine
+          ? `<button class="trash" data-rm="${p.id}" aria-label="Supprimer">🗑</button>`
+          : `<button class="add ${isFav(p.id) ? "on" : ""}" data-add="${p.id}">${isFav(p.id) ? "✓" : "+"}</button>`}
+      </div>
+    `;
+  }
+
+  function isCountryLabel(s) {
+    return /^(japan|france|serbia|england|spain|germany|italy|portugal|netherlands|brazil|argentina|belgium|croatia|norway|sweden|denmark|turkey|türkiye|morocco|algeria|senegal|nigeria|egypt|usa|mexico|canada|australia|korea|china|saudi|wales|scotland|ireland|poland|austria|switzerland|greece|romania|hungary|ukraine|russia|colombia|uruguay|chile|ecuador|cameroon|ghana|ivory|côte|ivory coast)$/i.test(String(s || "").trim());
+  }
+
+  function playerLeague(p) {
+    const st = cachedStats()[p.id] || {};
+    const raw = st.league || p.league || "";
+    if (raw && !isNonClubComp(raw)) return knownLeagueName(raw) || raw;
+    if (p.league && !isNonClubComp(p.league)) return knownLeagueName(p.league) || p.league;
+    return "Autre";
+  }
+  function rankRow(p, i) {
+    const club = p.team && !isCountryLabel(p.team) ? p.team : (cachedStats()[p.id] && cachedStats()[p.id].team) || p.team || "";
+    return `
+        <div class="rank">
+          <div class="pos">${i + 1}</div>
+          <div class="rank-id">
+            <div class="pname">${p.name}</div>
+            <div class="pmeta">${[club, p.league].filter(Boolean).join(" · ")}</div>
+          </div>
+          <div class="ga">
+            <b>${p.ga === -1 || p.ga === undefined ? "–" : p.ga}</b>
+            <span>${p.goals ?? "–"} B · ${p.assists ?? "–"} P</span>
+          </div>
+        </div>`;
+  }
+  function renderRank() {
+    const mine = favs();
+    const stats = cachedStats();
+    const rows = mine.map((p) => {
+      const s = stats[p.id] || { goals: "–", assists: "–", ga: -1 };
+      return {
+        ...p,
+        ...s,
+        team: (s.team && !isCountryLabel(s.team) ? s.team : p.team) || p.team || "",
+        league: p.league || s.league || "",
+        gaNum: Number(s.ga) || 0,
+        gNum: Number(s.goals) || 0,
+        aNum: Number(s.assists) || 0,
+      };
+    });
+    const sort = state.rankSort || "ga";
+    if (sort === "goals") rows.sort((a, b) => b.gNum - a.gNum || b.aNum - a.aNum);
+    else if (sort === "assists") rows.sort((a, b) => b.aNum - a.aNum || b.gNum - a.gNum);
+    else if (sort === "league") rows.sort((a, b) => playerLeague(a).localeCompare(playerLeague(b), "fr") || b.gaNum - a.gaNum);
+    else rows.sort((a, b) => b.gaNum - a.gaNum || b.gNum - a.gNum);
+    const chip = (id, label) => `<button class="chip ${sort === id ? "on" : ""}" data-rsort="${id}">${label}</button>`;
+    let body = "";
+    if (!rows.length) body = `<div class="empty">Ajoute des favoris pour voir le classement.</div>`;
+    else if (sort === "league") {
+      let last = "";
+      let n = 0;
+      rows.forEach((p) => {
+        const lg = playerLeague(p);
+        if (lg !== last) {
+          body += `<h2 class="sec">${lg}</h2>`;
+          last = lg;
+          n = 0;
+        }
+        n += 1;
+        body += rankRow(p, n);
+      });
+    } else {
+      body = rows.map((p, i) => rankRow(p, i + 1)).join("");
+    }
+    return `
+      <h2 class="sec">Favoris · saison 2026-2027</h2>
+      <div class="chips" id="rankSort">
+        ${chip("ga", "Tout")}
+        ${chip("goals", "Buts")}
+        ${chip("assists", "Passes")}
+        ${chip("league", "Championnat")}
+      </div>
+      ${body}
+    `;
+  }
+
+  function renderBets() {
+    const mine = favs();
+    const list = bets();
+    const s = betSummary();
+    const matches = state.matches.slice().sort((a, b) => (a.isLive === b.isLive ? new Date(a.date) - new Date(b.date) : a.isLive ? -1 : 1));
+    const mk = state.betMarket;
+    const on = (cond) => cond ? "on" : "";
+    let extra = "";
+    if (mk === "1n2") extra = `<div class="chips"><button class="chip ${on(state.betPick==="1")}" data-pick="1">1</button><button class="chip ${on(state.betPick==="N")}" data-pick="N">N</button><button class="chip ${on(state.betPick==="2")}" data-pick="2">2</button></div>`;
+    if (mk === "dc") extra = `<div class="chips"><button class="chip ${on(state.betPick==="1N")}" data-pick="1N">1N</button><button class="chip ${on(state.betPick==="N2")}" data-pick="N2">N2</button></div>`;
+    if (mk === "btts") extra = `<div class="chips"><button class="chip ${on(state.betBtts==="oui")}" data-btts="oui">Oui</button><button class="chip ${on(state.betBtts==="non")}" data-btts="non">Non</button></div>`;
+    if (mk === "goals") extra = `<div class="chips"><button class="chip ${on(state.betPick==="over")}" data-pick="over">Plus</button><button class="chip ${on(state.betPick==="under")}" data-pick="under">Moins</button><button class="chip ${on(state.betPick==="exact")}" data-pick="exact">Exact</button></div><label class="field">Seuil</label><select id="betLine">${["0.5","1.5","2.5","3.5","4.5","1","2","3","4"].map((n)=>`<option value="${n}" ${String(state.betLine)===n?"selected":""}>${n}</option>`).join("")}</select>`;
+    if (mk === "player") extra = `<label class="field">Joueur favori</label><select id="betPlayer"><option value="">Choisir…</option>${mine.map((p)=>`<option value="${p.id}" ${state.betPlayer===p.id?"selected":""}>${p.name}</option>`).join("")}</select><label class="field">Marché joueur</label><div class="chips wrap">${[["buteur","Buteur"],["passeur","Passeur"],["decisif","Décisif"],["buteur_1mt","Buteur 1MT"],["buteur_2mt","Buteur 2MT"],["buteur_passeur","Buteur + passeur"],["buteur_2periodes","Buteur 2 MT"]].map(([v,l])=>`<button class="chip ${on(state.betType===v)}" data-type="${v}">${l}</button>`).join("")}</div>`;
+    const slipOdds = state.slip.length ? comboOdds(state.slip) : 0;
+    return `
+      <div class="stats-grid">
+        <div class="stat"><div class="n">${euro(s.mise)}</div><div class="l">Mises</div></div>
+        <div class="stat"><div class="n">${euro(s.gains)}</div><div class="l">Gains</div></div>
+        <div class="stat ${s.benef > 0 ? "pos" : s.benef < 0 ? "neg" : ""}"><div class="n">${euro(s.benef)}</div><div class="l">Bénéfice</div></div>
+      </div>
+      <h2 class="sec">Nouveau pari</h2>
+      <div class="form">
+        <label class="field">Match</label>
+        <select id="betMatch"><option value="">Match du jour…</option>${matches.map((m)=>`<option value="${m.id}" ${String(state.betMatch)===String(m.id)?"selected":""}>${m.home.name} – ${m.away.name} · ${m.league}</option>`).join("")}</select>
+        <label class="field">Marché</label>
+        <div class="chips wrap">${[["1n2","1 N 2"],["dc","Double chance"],["btts","L2EM"],["goals","Nb buts"],["player","Joueur"]].map(([v,l])=>`<button class="chip ${on(mk===v)}" data-market="${v}">${l}</button>`).join("")}</div>
+        ${extra}
+        <label class="field">Côte</label>
+        <input id="betOdds" type="number" min="1.01" step="0.01" value="${escapeAttr(state.betOdds)}" placeholder="1.80" />
+        <button class="btn full" id="addSlip">Ajouter au coupon</button>
+      </div>
+      <h2 class="sec">Coupon ${state.slip.length > 1 ? "· Combiné" : ""}</h2>
+      ${!state.slip.length ? `<div class="empty">Une sélection = simple. Plusieurs = combiné (côtes multipliées, un faux = perdu).</div>` : `${state.slip.map((sel)=>`<article class="bet"><div class="bet-top"><div class="pname">${selLabel(sel)}</div><span class="status open">${Number(sel.odds).toFixed(2)}</span></div><button class="btn sm ghost" data-rmslip="${sel.id}">Retirer</button></article>`).join("")}<div class="pmeta" style="margin:8px 2px">Côte totale ${slipOdds.toFixed(2)}</div><label class="field">Mise (€)</label><input id="betStake" type="number" min="0" step="0.5" value="${escapeAttr(state.betStake)}" placeholder="10" /><button class="btn full" id="placeBet">${state.slip.length > 1 ? "Valider le combiné" : "Valider le ticket"}</button>`}
+      <h2 class="sec">Mes tickets</h2>
+      ${!list.length ? `<div class="empty">Aucun pari pour l'instant.</div>` : list.map((b)=>`<article class="bet"><div class="bet-top"><div><div class="pname">${b.type==="combo"?"Combiné":"Simple"} · ${euro(b.stake)} @ ${Number(b.odds||0).toFixed(2)}</div></div><span class="status ${b.status}">${statusLabel(b.status)}</span></div>${(b.selections||[]).length ? (b.selections||[]).map((sel,i)=>{ const st = evalSelection(sel, state.matches); const mk = st==="won" ? " ✅" : st==="lost" ? " ❌" : ""; return `<div class="bet-leg"><span>${selLabel(sel)} · ${Number(sel.odds).toFixed(2)}${mk}</span><button class="btn sm ghost" data-rmsel="${b.id}" data-sel="${sel.id || i}">Retirer</button></div>`; }).join("") : `<div class="pmeta">${(b.playerName||"")+" · "+typeLabel(b.type)}</div>`}<div class="pmeta" style="margin-top:6px">Gain pot. ${euro(b.potential)}${b.status==="won"?` · +${euro(b.profit)}`:b.status==="lost"?` · ${euro(b.profit)}`:""}</div><div class="actions"><button class="btn sm ghost" data-delbet="${b.id}">Supprimer le ticket</button></div></article>`).join("")}
+    `;
+  }
+
+
+  function fact(n) { let r = 1; for (let i = 2; i <= n; i++) r *= i; return r; }
+  function poisson(k, lam) { return Math.exp(-lam) * Math.pow(lam, k) / fact(k); }
+  function teamPower(form, record) {
+    let ppg = 1.2;
+    const rec = String(record || "").match(/(\d+)\s*-\s*(\d+)\s*-\s*(\d+)/);
+    if (rec) {
+      const w = +rec[1], d = +rec[2], l = +rec[3];
+      const g = w + d + l;
+      if (g) ppg = (3 * w + d) / g;
+    }
+    const f = String(form || "").toUpperCase();
+    let fp = 0, n = 0;
+    for (const ch of f) {
+      if (ch === "W") { fp += 3; n++; }
+      else if (ch === "D") { fp += 1; n++; }
+      else if (ch === "L") { n++; }
+    }
+    const formPpg = n ? fp / n : ppg;
+    return Math.max(0.25, Math.min(2.9, 0.58 * ppg + 0.42 * formPpg));
+  }
+  function analyzeMatch(m) {
+    const ph = teamPower(m.home.form, m.home.record);
+    const pa = teamPower(m.away.form, m.away.record);
+    const diff = ph - pa;
+    let lh = 1.18 + diff * 0.62 + 0.22;
+    let la = 1.02 - diff * 0.58;
+    lh = Math.max(0.45, Math.min(2.7, lh));
+    la = Math.max(0.4, Math.min(2.5, la));
+    const grid = [];
+    let p1 = 0, pN = 0, p2 = 0, best = { h: 1, a: 1, p: 0 };
+    for (let i = 0; i <= 5; i++) {
+      for (let j = 0; j <= 5; j++) {
+        const p = poisson(i, lh) * poisson(j, la);
+        grid.push({ i, j, p });
+        if (i > j) p1 += p; else if (i === j) pN += p; else p2 += p;
+        if (p > best.p) best = { h: i, a: j, p };
+      }
+    }
+    const tot = p1 + pN + p2 || 1;
+    return {
+      p1: Math.round(1000 * p1 / tot) / 10,
+      pN: Math.round(1000 * pN / tot) / 10,
+      p2: Math.round(1000 * p2 / tot) / 10,
+      score: best.h + "–" + best.a,
+      scorePct: Math.round(1000 * best.p / tot) / 10,
+      xg: (lh + la).toFixed(1),
+    };
+  }
+  function teamWatchList(team) {
+    const names = [team.name, team.full].filter(Boolean);
+    const stats = cachedStats();
+    const pool = [];
+    const seen = new Set();
+    const add = (p) => {
+      const id = String(p.id || p.name);
+      if (seen.has(id)) return;
+      seen.add(id);
+      const st = stats[p.id] || {};
+      pool.push({ id: p.id, name: p.name, team: p.team || "", ga: Number(st.ga) || 0 });
+    };
+    favs().forEach(add);
+    (CATALOG || []).forEach(add);
+    const hit = pool.filter((p) => names.some((n) => {
+      const a = String(n || "").toLowerCase();
+      const b = String(p.team || "").toLowerCase();
+      return a && b && (a === b || a.includes(b) || b.includes(a));
+    }));
+    hit.sort((a, b) => b.ga - a.ga);
+    return hit;
+  }
+  function formBoxes(form) {
+    const seq = String(form || "").toUpperCase().replace(/[^WDL]/g, "").slice(-5);
+    if (!seq) return "";
+    return `<div class="form-boxes">${[...seq].map((ch) => {
+      if (ch === "W") return `<i class="fb w">V</i>`;
+      if (ch === "D") return `<i class="fb n">N</i>`;
+      return `<i class="fb l">D</i>`;
+    }).join("")}</div>`;
+  }
+  function watchPlayers(m) {
+    const stats = cachedStats();
+    const mine = favs();
+    const matchTeam = (p, team) => {
+      const a = String(p.team || "").toLowerCase();
+      const names = [team.name, team.full].map((x) => String(x || "").toLowerCase()).filter(Boolean);
+      return a && names.some((n) => n === a || n.includes(a) || a.includes(n));
+    };
+    const pick = (team) => mine.filter((p) => matchTeam(p, team)).sort((a, b) => (Number((stats[b.id] || {}).ga) || 0) - (Number((stats[a.id] || {}).ga) || 0));
+    const h = pick(m.home);
+    const a = pick(m.away);
+    const out = [];
+    if (h[0]) out.push({ ...h[0], side: m.home.name });
+    if (a[0]) out.push({ ...a[0], side: m.away.name });
+    if (out.length < 2 && h[1]) out.push({ ...h[1], side: m.home.name });
+    if (out.length < 2 && a[1]) out.push({ ...a[1], side: m.away.name });
+    return out.slice(0, 2);
+  }
+  function renderAnalyse() {
+    const list = state.matches.slice().sort((a, b) => {
+      if (a.isLive !== b.isLive) return a.isLive ? -1 : 1;
+      return new Date(a.date) - new Date(b.date);
+    });
+    if (state.loading) return `<div class="loading">Analyse des matchs…</div>`;
+    if (!list.length) return `<div class="empty">Aucun match à analyser pour ce jour. Va d’abord sur Matchs.</div>`;
+    return `
+      <h2 class="sec">Analyse du jour</h2>
+      <p class="pmeta" style="margin:0 2px 12px">1-N-2 et score issus de la forme + bilan ESPN. Joueurs à suivre parmi tes favoris et la base.</p>
+      ${list.map((m) => {
+        const a = analyzeMatch(m);
+        const watch = watchPlayers(m);
+        return `<article class="match analyse-card">
+          <div class="row space match-head">
+            <span class="league-tag">${m.league}</span>
+            ${statusBadge(m)}
+          </div>
+          <div class="scoreboard">
+            <div class="team"><span class="tname">${m.home.name}</span>${formBoxes(m.home.form)}</div>
+            <div><div class="score">${a.score}</div><div class="clock">plus probable · ${a.scorePct}%</div></div>
+            <div class="team away"><span class="tname">${m.away.name}</span>${formBoxes(m.away.form)}</div>
+          </div>
+          <div class="an-bars">
+            <div class="an-row"><span>1</span><div class="bar"><i style="width:${a.p1}%"></i></div><b>${a.p1}%</b></div>
+            <div class="an-row"><span>N</span><div class="bar"><i style="width:${a.pN}%"></i></div><b>${a.pN}%</b></div>
+            <div class="an-row"><span>2</span><div class="bar"><i style="width:${a.p2}%"></i></div><b>${a.p2}%</b></div>
+          </div>
+          ${watch.length ? `<div class="watch">${watch.map((p) => `<div class="watch-p"><b>${p.name}</b><span>${p.side}</span></div>`).join("")}</div>` : ""}
+        </article>`;
+      }).join("")}
+    `;
+  }
+
+  function renderSettings() {
+    const s = getSettings();
+    return `
+      <h2 class="sec">Réglages</h2>
+      <article class="bet">
+        <div class="bet-top">
+          <div>
+            <div class="pname">Vibration sur but</div>
+            <div class="pmeta">Légère vibration du téléphone à chaque but détecté</div>
+          </div>
+          <button class="toggle ${s.vibrateGoals ? "on" : ""}" id="togVibrate" aria-pressed="${s.vibrateGoals}">${s.vibrateGoals ? "ON" : "OFF"}</button>
+        </div>
+      </article>
+      <p class="pmeta" style="margin:12px 2px 0">D’autres réglages arriveront ici.</p>
+    `;
+  }
+
+  function escapeAttr(s) {
+    return String(s ?? "").replace(/"/g, "&quot;");
+  }
+
+  function render() {
+    if (state.tab === "matches") main.innerHTML = renderMatches();
+    else if (state.tab === "favs") main.innerHTML = renderFavs();
+    else if (state.tab === "rank") main.innerHTML = renderRank();
+    else if (state.tab === "bets") main.innerHTML = renderBets();
+    else if (state.tab === "analyse") main.innerHTML = renderAnalyse();
+    else main.innerHTML = renderSettings();
+    bind();
+  }
+
+  function bind() {
+    $("#dPrev")?.addEventListener("click", () => {
+      state.date = new Date(state.date.getTime() - 86400000);
+      loadMatches();
+    });
+    $("#dNext")?.addEventListener("click", () => {
+      state.date = new Date(state.date.getTime() + 86400000);
+      loadMatches();
+    });
+    $("#leagueChips")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-lg]");
+      if (!btn) return;
+      state.league = btn.dataset.lg;
+      loadMatches();
+    });
+    main.querySelectorAll("[data-star]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMatchFav(btn.dataset.star);
+      });
+    });
+    const search = $("#playerSearch");
+    if (search) {
+      search.addEventListener("input", (e) => {
+        state.q = e.target.value;
+        const pos = e.target.selectionStart;
+        render();
+        const again = document.getElementById("playerSearch");
+        if (again) {
+          again.focus();
+          again.setSelectionRange(pos, pos);
+        }
+        clearTimeout(bind._t);
+        bind._t = setTimeout(() => remoteSearch(state.q), 280);
+      });
+    }
+    main.querySelectorAll("[data-add]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.add;
+        const p = [...CATALOG, ...state.searchRemote, ...favs()].find((x) => String(x.id) === id);
+        if (p) addFav(p);
+      });
+    });
+    main.querySelectorAll("[data-rm]").forEach((btn) => {
+      btn.addEventListener("click", () => removeFav(btn.dataset.rm));
+    });
+    main.querySelectorAll("[data-type]").forEach((btn) => {
+      btn.addEventListener("click", () => { state.betType = btn.dataset.type; render(); });
+    });
+    main.querySelectorAll("[data-market]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.betMarket = btn.dataset.market;
+        if (state.betMarket === "1n2") state.betPick = "1";
+        if (state.betMarket === "dc") state.betPick = "1N";
+        if (state.betMarket === "goals") state.betPick = "over";
+        render();
+      });
+    });
+    main.querySelectorAll("[data-pick]").forEach((btn) => {
+      btn.addEventListener("click", () => { state.betPick = btn.dataset.pick; render(); });
+    });
+    main.querySelectorAll("[data-btts]").forEach((btn) => {
+      btn.addEventListener("click", () => { state.betBtts = btn.dataset.btts; render(); });
+    });
+    main.querySelectorAll("[data-rmslip]").forEach((btn) => {
+      btn.addEventListener("click", () => removeSlip(btn.dataset.rmslip));
+    });
+    $("#betPlayer")?.addEventListener("change", (e) => { state.betPlayer = e.target.value; });
+    $("#betMatch")?.addEventListener("change", (e) => { state.betMatch = e.target.value; });
+    $("#betLine")?.addEventListener("change", (e) => { state.betLine = e.target.value; });
+    $("#betStake")?.addEventListener("input", (e) => { state.betStake = e.target.value; });
+    $("#betOdds")?.addEventListener("input", (e) => { state.betOdds = e.target.value; });
+    $("#addSlip")?.addEventListener("click", createSelection);
+    $("#placeBet")?.addEventListener("click", createBet);
+    main.querySelectorAll("[data-settle]").forEach((btn) => {
+      btn.addEventListener("click", () => settle(btn.dataset.settle, btn.dataset.st));
+    });
+    main.querySelectorAll("[data-delbet]").forEach((btn) => {
+      btn.addEventListener("click", () => deleteBet(btn.dataset.delbet));
+    });
+    main.querySelectorAll("[data-rmsel]").forEach((btn) => {
+      btn.addEventListener("click", () => removeBetSelection(btn.dataset.rmsel, btn.dataset.sel));
+    });
+    document.getElementById("rankSort")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-rsort]");
+      if (!btn) return;
+      state.rankSort = btn.dataset.rsort;
+      render();
+    });
+    document.getElementById("togVibrate")?.addEventListener("click", () => {
+      const next = !getSettings().vibrateGoals;
+      setSetting("vibrateGoals", next);
+      if (next && navigator.vibrate) navigator.vibrate(25);
+      render();
+    });
+  }
+
+  const FOTMOB_LEAGUES = {
+    "eng.1": 47, "esp.1": 87, "ita.1": 55, "ger.1": 54, "fra.1": 53,
+    "ksa.1": 536, "ned.1": 57, "por.1": 61, "chn.1": 120, "usa.1": 130, "tur.1": 71, "bra.1": 268
+  };
+
+  async function enrichAssistsFotmob(matches) {
+    const need = matches.filter((m) => (m.isLive || m.isDone) && (m.scorers || []).some((s) => !s.assist));
+    if (!need.length) return;
+    const byLeague = {};
+    need.forEach((m) => {
+      const id = FOTMOB_LEAGUES[m.leagueId];
+      if (!id) return;
+      (byLeague[id] ||= []).push(m);
+    });
+    for (const lid of Object.keys(byLeague)) {
+      let league;
+      try { league = await fetchJSON("https://www.fotmob.com/api/data/leagues?id=" + lid); }
+      catch { continue; }
+      const all = (((league.fixtures || {}).allMatches) || []);
+      for (const m of byLeague[lid]) {
+        const day = (m.date || "").slice(0, 10);
+        const hs = String(m.home.score), as = String(m.away.score);
+        const scoreA = hs + " - " + as;
+        const scoreB = as + " - " + hs;
+        const dated = all.filter((fx) => {
+          const utc = ((fx.status || {}).utcTime || "").slice(0, 10);
+          return !day || !utc || day === utc;
+        });
+        let hit = dated.find((fx) => {
+          const home = (fx.home || {}).name || "";
+          const away = (fx.away || {}).name || "";
+          return (namesMatch(home, m.home.name) && namesMatch(away, m.away.name))
+              || (namesMatch(home, m.away.name) && namesMatch(away, m.home.name));
+        });
+        if (!hit) {
+          hit = dated.find((fx) => {
+            const sc = ((fx.status || {}).scoreStr || "").replace(/\s+/g, " ").trim();
+            return sc === scoreA || sc === scoreB;
+          });
+        }
+        if (!hit) {
+          hit = dated.find((fx) => {
+            const blob = ((fx.home || {}).name + " " + (fx.away || {}).name).toLowerCase();
+            return blob.includes(normName(m.home.name).split(" ").pop())
+                && blob.includes(normName(m.away.name).split(" ").pop());
+          });
+        }
+        if (!hit || !hit.id) continue;
+        let det;
+        try { det = await fetchJSON("https://www.fotmob.com/api/data/matchDetails?matchId=" + hit.id); }
+        catch { continue; }
+        const evs = ((det.header || {}).events) || {};
+        const goals = [];
+        Object.values(evs.homeTeamGoals || {}).forEach((arr) => (arr || []).forEach((g) => goals.push(g)));
+        Object.values(evs.awayTeamGoals || {}).forEach((arr) => (arr || []).forEach((g) => goals.push(g)));
+        m.scorers.forEach((s) => {
+          if (s.assist) return;
+          const min = parseInt(String(s.minute).replace(/\D/g, ""), 10);
+          const g = goals.find((x) => {
+            const nm = x.fullName || x.nameStr || (x.player && x.player.name) || "";
+            const tm = Number(x.time);
+            return namesMatch(nm, s.scorer) && (!min || tm === min || Math.abs(tm - min) <= 1);
+          }) || goals.find((x) => {
+            const tm = Number(x.time);
+            return min && (tm === min || Math.abs(tm - min) <= 1);
+          });
+          if (!g) return;
+          let an = g.assistInput || "";
+          if (!an && g.assistStr) {
+            const mm = String(g.assistStr).match(/assist by\s+(.+)/i);
+            an = mm ? mm[1].trim() : "";
+          }
+          if (an) {
+            s.assist = an;
+            s.assistId = String(g.assistPlayerId || "");
+          }
+        });
+      }
+    }
+  }
+
+  document.querySelectorAll("nav.tabs button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.tab = btn.dataset.tab;
+      document.querySelectorAll("nav.tabs button").forEach((b) => b.classList.toggle("on", b === btn));
+      render();
+      if (state.tab === "rank") refreshAllStats();
+      if (state.tab === "matches") loadMatches();
+      if (state.tab === "bets") {
+        autoSettleBets(state.matches);
+        if (!state.matches.length) loadMatches({ silent: true });
+      }
+      if ((state.tab === "analyse" || state.tab === "favs") && !state.matches.length) loadMatches({ silent: true });
+    });
+  });
+
+
+  document.getElementById("confirmNo")?.addEventListener("click", hideConfirm);
+  document.getElementById("confirmYes")?.addEventListener("click", confirmRemoveFav);
+  document.getElementById("confirmBg")?.addEventListener("click", (e) => {
+    if (e.target.id === "confirmBg") hideConfirm();
+  });
+
+  setTimeout(() => {
+    const sp = document.getElementById("splash");
+    if (sp) sp.classList.add("through");
+  }, 2500);
+  setTimeout(() => {
+    const sp = document.getElementById("splash");
+    if (sp) sp.remove();
+  }, 2900);
+
+  loadMatches();
+  refreshAllStats();
+  setInterval(() => {
+    if (state.tab === "matches") loadMatches({ silent: true });
+  }, 60000);
+})();
+
+</script>
+</body>
+</html>
