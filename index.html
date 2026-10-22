@@ -845,6 +845,7 @@ nav.tabs button { font-size: 10px; }
     </div>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 window.GUCCI = {
   leagues: [
@@ -985,6 +986,13 @@ window.GUCCI = {
   const LS_FIVE = "gucci_five";
   const LS_USERS = "gucci_users";
   const LS_SESSION = "gucci_session";
+
+  // Supabase: clé publishable prévue pour le navigateur (jamais de service_role ici).
+  const SUPABASE_URL = "https://fadsqfelapghsqdznvrq.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_veXtW1SrOJ25Mj_SLcmzrw_Zn9emHnI";
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+  let supabaseUserId = null;
+  let supabaseBooting = true;
   const LEAGUES = window.GUCCI.leagues;
   const CATALOG = window.GUCCI.players;
 
@@ -2314,8 +2322,52 @@ window.GUCCI = {
     const key = sessionPseudo();
     if (!key) return null;
     const users = loadUsers();
-    return users[key] || null;
+    const user = users[key] || null;
+    // Les anciens comptes locaux ne servent plus à l'authentification en ligne.
+    if (user && user.supabaseId) return user;
+    return null;
   }
+
+  async function hydrateSupabaseUser(authUser) {
+    if (!authUser) {
+      supabaseUserId = null;
+      setSession("");
+      return;
+    }
+    supabaseUserId = authUser.id;
+    const metadata = authUser.user_metadata || {};
+    let pseudo = String(metadata.pseudo || (authUser.email || "joueur").split("@")[0]).trim();
+    let weekGold = 0;
+    let weekId = mondayWeekId(new Date());
+    try {
+      const { data, error } = await sb.from("profiles")
+        .select("pseudo, week_gold, week_id")
+        .eq("id", authUser.id)
+        .maybeSingle();
+      if (!error && data) {
+        pseudo = data.pseudo || pseudo;
+        weekGold = Number(data.week_gold || 0);
+        weekId = data.week_id || weekId;
+      }
+    } catch (e) { /* le compte Auth reste utilisable même si la table n'est pas encore créée */ }
+    const key = pseudo.toLowerCase();
+    const users = loadUsers();
+    const previous = users[key] || {};
+    users[key] = ensureUserWeek({
+      ...previous,
+      pseudo,
+      email: authUser.email || "",
+      supabaseId: authUser.id,
+      friends: Array.isArray(previous.friends) ? previous.friends : [],
+      requests: Array.isArray(previous.requests) ? previous.requests : [],
+      weekId,
+      weekGold,
+      createdAt: previous.createdAt || Date.now(),
+    });
+    saveUsers(users);
+    setSession(key);
+  }
+
   function mondayWeekId(dt) {
     const d = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
     const day = d.getDay(); // 0 dim
@@ -2341,6 +2393,11 @@ window.GUCCI = {
     const key = String(u.pseudo).toLowerCase();
     users[key] = u;
     saveUsers(users);
+    if (u.supabaseId) {
+      const currentWeek = mondayWeekId(new Date());
+      sb.from("profiles").update({ week_gold: Number(u.weekGold || 0), week_id: u.weekId || currentWeek })
+        .eq("id", u.supabaseId).then(({ error }) => { if (error) console.warn("Supabase profile sync:", error.message); });
+    }
   }
   function addWeekGold(amount) {
     const u = currentUser();
@@ -2349,51 +2406,47 @@ window.GUCCI = {
     u.weekGold = (u.weekGold || 0) + Math.max(0, Math.floor(amount));
     saveCurrentUser(u);
   }
-  function registerUser(email, pseudo, pass, pass2) {
+  async function registerUser(email, pseudo, pass, pass2) {
     email = String(email || "").trim();
     pseudo = String(pseudo || "").trim();
     pass = String(pass || "");
     pass2 = String(pass2 || "");
-    if (!email || !email.includes("@")) return "Email invalide";
-    if (pseudo.length < 3) return "Pseudo trop court (min. 3)";
-    if (!/^[a-zA-Z0-9._-]+$/.test(pseudo)) return "Pseudo: lettres, chiffres, . _ -";
-    if (pass.length < 4) return "Mot de passe trop court (min. 4)";
-    if (pass !== pass2) return "Les mots de passe ne correspondent pas";
-    const users = loadUsers();
-    const key = pseudo.toLowerCase();
-    if (users[key]) return "Ce pseudo est déjà pris";
-    if (Object.values(users).some((x) => (x.email || "").toLowerCase() === email.toLowerCase())) {
-      return "Cet email est déjà utilisé";
-    }
-    users[key] = ensureUserWeek({
-      pseudo,
+    if (!email || !email.includes("@")) return { error: "Email invalide" };
+    if (pseudo.length < 3) return { error: "Pseudo trop court (min. 3)" };
+    if (!/^[a-zA-Z0-9._-]+$/.test(pseudo)) return { error: "Pseudo: lettres, chiffres, . _ -" };
+    if (pass.length < 6) return { error: "Mot de passe trop court (min. 6 caractères)" };
+    if (pass !== pass2) return { error: "Les mots de passe ne correspondent pas" };
+    const { data, error } = await sb.auth.signUp({
       email,
-      pass: hashPwd(key, pass),
-      friends: [],
-      requests: [],
-      weekId: mondayWeekId(new Date()),
-      weekGold: 0,
-      createdAt: Date.now(),
+      password: pass,
+      options: { data: { pseudo } }
     });
-    saveUsers(users);
-    setSession(key);
-    return null;
+    if (error) {
+      const msg = String(error.message || "");
+      if (/already registered|already exists/i.test(msg)) return { error: "Cet email est déjà utilisé" };
+      if (/duplicate key|profiles_pseudo/i.test(msg)) return { error: "Ce pseudo est déjà pris" };
+      return { error: msg || "Impossible de créer le compte" };
+    }
+    if (data.user && data.session) {
+      await hydrateSupabaseUser(data.user);
+      return { error: null, pending: false };
+    }
+    return { error: null, pending: true };
   }
-  function loginUser(pseudo, pass) {
-    pseudo = String(pseudo || "").trim();
+
+  async function loginUser(email, pass) {
+    email = String(email || "").trim();
     pass = String(pass || "");
-    const key = pseudo.toLowerCase();
-    const users = loadUsers();
-    const u = users[key];
-    if (!u) return "Pseudo inconnu";
-    if (u.pass !== hashPwd(key, pass)) return "Mot de passe incorrect";
-    ensureUserWeek(u);
-    users[key] = u;
-    saveUsers(users);
-    setSession(key);
+    if (!email || !email.includes("@")) return "Entre l'adresse email de ton compte";
+    const { data, error } = await sb.auth.signInWithPassword({ email, password: pass });
+    if (error) return /invalid login credentials/i.test(error.message || "") ? "Email ou mot de passe incorrect" : (error.message || "Connexion impossible");
+    await hydrateSupabaseUser(data.user);
     return null;
   }
-  function logoutUser() {
+
+  async function logoutUser() {
+    try { await sb.auth.signOut(); } catch (e) {}
+    supabaseUserId = null;
     setSession("");
   }
   function addFriend(targetPseudo) {
@@ -2491,7 +2544,7 @@ window.GUCCI = {
     if (mode === "register") {
       return `<div class="auth-box">
         <h2>Créer un compte</h2>
-        <p class="pmeta">Compte local sur cet appareil (amis entre comptes enregistrés ici).</p>
+        <p class="pmeta">Compte en ligne sécurisé par Supabase.</p>
         <label>Email</label><input id="authEmail" type="email" placeholder="toi@mail.com" autocomplete="email"/>
         <label>Pseudo</label><input id="authPseudo" type="text" placeholder="Pseudo" autocomplete="username"/>
         <label>Mot de passe</label><input id="authPass" type="password" placeholder="••••" autocomplete="new-password"/>
@@ -2502,8 +2555,8 @@ window.GUCCI = {
     }
     return `<div class="auth-box">
       <h2>Connexion</h2>
-      <p class="pmeta">Pseudo + mot de passe</p>
-      <label>Pseudo</label><input id="authPseudo" type="text" placeholder="Pseudo" autocomplete="username"/>
+      <p class="pmeta">Connecte-toi avec ton adresse email</p>
+      <label>Email</label><input id="authEmail" type="email" placeholder="toi@mail.com" autocomplete="email"/>
       <label>Mot de passe</label><input id="authPass" type="password" placeholder="••••" autocomplete="current-password"/>
       <button class="btn" id="authSubmit">Se connecter</button>
       <div class="auth-switch">Pas de compte ? <button type="button" id="authToRegister">S’inscrire</button></div>
@@ -2563,7 +2616,7 @@ window.GUCCI = {
       <input id="socialSearch" placeholder="Pseudo exact…" value="${escapeAttr(state.socialQ || "")}"/>
     </div>
     <button class="btn" id="socialAddBtn" style="width:100%">Envoyer une demande</button>
-    <p class="pmeta" style="margin-top:8px">Les amis doivent avoir un compte sur <b>cet appareil</b> (stockage local).</p>`;
+    <p class="pmeta" style="margin-top:8px">Connexion en ligne active. Les fonctions amis/classement social seront synchronisées dans une prochaine étape.</p>`;
   }
 
 // ——— FIVE ———
@@ -4345,28 +4398,38 @@ function detectGoals(matches) {
 
     document.getElementById("authToLogin")?.addEventListener("click", () => { state.authMode = "login"; render(); });
     document.getElementById("authToRegister")?.addEventListener("click", () => { state.authMode = "register"; render(); });
-    document.getElementById("authSubmit")?.addEventListener("click", () => {
-      const pseudo = document.getElementById("authPseudo")?.value || "";
+    document.getElementById("authSubmit")?.addEventListener("click", async () => {
       const pass = document.getElementById("authPass")?.value || "";
-      if ((state.authMode || "login") === "register") {
-        const err = registerUser(
-          document.getElementById("authEmail")?.value || "",
-          pseudo,
-          pass,
-          document.getElementById("authPass2")?.value || ""
-        );
+      const button = document.getElementById("authSubmit");
+      if (button) { button.disabled = true; button.textContent = "Patiente…"; }
+      try {
+        if ((state.authMode || "login") === "register") {
+          const pseudo = document.getElementById("authPseudo")?.value || "";
+          const result = await registerUser(document.getElementById("authEmail")?.value || "", pseudo, pass, document.getElementById("authPass2")?.value || "");
+          if (result.error) { toast(result.error); return; }
+          if (result.pending) {
+            toast("Compte créé : vérifie tes emails pour confirmer l'inscription.");
+            state.authMode = "login";
+            render();
+            return;
+          }
+          toast("Compte créé — bienvenue " + pseudo);
+          render();
+          return;
+        }
+        const err = await loginUser(document.getElementById("authEmail")?.value || "", pass);
         if (err) { toast(err); return; }
-        toast("Compte créé — bienvenue " + pseudo);
+        toast("Connecté");
         render();
-        return;
+      } catch (e) {
+        toast(e && e.message ? e.message : "Erreur de connexion à Supabase");
+      } finally {
+        const b = document.getElementById("authSubmit");
+        if (b) { b.disabled = false; b.textContent = (state.authMode || "login") === "register" ? "S’inscrire" : "Se connecter"; }
       }
-      const err = loginUser(pseudo, pass);
-      if (err) { toast(err); return; }
-      toast("Connecté");
-      render();
     });
-    document.getElementById("authLogout")?.addEventListener("click", () => { logoutUser(); toast("Déconnecté"); render(); });
-    document.getElementById("authLogoutSettings")?.addEventListener("click", () => { logoutUser(); toast("Déconnecté"); render(); });
+    document.getElementById("authLogout")?.addEventListener("click", async () => { await logoutUser(); toast("Déconnecté"); render(); });
+    document.getElementById("authLogoutSettings")?.addEventListener("click", async () => { await logoutUser(); toast("Déconnecté"); render(); });
     document.getElementById("goSocialAuth")?.addEventListener("click", () => { state.tab = "social"; state.authMode = "login"; render(); document.querySelectorAll("nav.tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === "social")); });
     document.getElementById("socialSearch")?.addEventListener("input", (e) => { state.socialQ = e.target.value || ""; });
     document.getElementById("socialAddBtn")?.addEventListener("click", () => {
@@ -4931,6 +4994,28 @@ document.getElementById("togVibrate")?.addEventListener("click", () => {
       endIntro(true);
     });
   })();
+
+  // Restaure la session Supabase au rechargement sans bloquer les scores ESPN.
+  sb.auth.getSession().then(async ({ data, error }) => {
+    if (!error && data && data.session && data.session.user) {
+      await hydrateSupabaseUser(data.session.user);
+    } else {
+      setSession(""); // ne pas réutiliser les anciennes sessions locales non sécurisées
+    }
+    supabaseBooting = false;
+    if (state.tab === "social" || state.tab === "settings") render();
+  }).catch(() => { supabaseBooting = false; setSession(""); });
+  sb.auth.onAuthStateChange((event, session) => {
+    if (session && session.user) {
+      Promise.resolve().then(() => hydrateSupabaseUser(session.user)).then(() => {
+        if (state.tab === "social" || state.tab === "settings") render();
+      });
+    } else if (event === "SIGNED_OUT") {
+      supabaseUserId = null;
+      setSession("");
+      if (state.tab === "social" || state.tab === "settings") render();
+    }
+  });
 
   loadMatches();
   refreshAllStats();
